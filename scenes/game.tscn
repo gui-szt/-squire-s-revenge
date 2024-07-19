@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://0cqvt2bevf5i"]
+
+[ext_resource type="Script" path="res://script/Global.gd" id="1_2s76x"]
+[ext_resource type="PackedScene" uid="uid://dfn8qobsgilp6" path="res://scenes/teste.tscn" id="2_4b0rk"]
+[ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="3_v025j"]
+[ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="4_kuy7r"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_2s76x")
+
+[node name="teste" parent="." instance=ExtResource("2_4b0rk")]
+
+[node name="Camera2D" type="Camera2D" parent="teste"]
+zoom = Vector2(4, 4)
+drag_horizontal_enabled = true
+
+[node name="trails" parent="teste" instance=ExtResource("3_v025j")]
+position = Vector2(608, -32)
+scale = Vector2(100, 0.5)
+
+[node name="trails2" parent="teste" instance=ExtResource("3_v025j")]
+position = Vector2(550, 36)
+scale = Vector2(100, 0.5)
+
+[node name="shielder" parent="." instance=ExtResource("4_kuy7r")]
+position = Vector2(-134, -42)
