@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://buvgst1h3p5fi"]
+[gd_scene load_steps=9 format=3 uid="uid://buvgst1h3p5fi"]
 
 [ext_resource type="Texture2D" uid="uid://cdpkr643sh05q" path="res://assets/placeholders/placeholders.png" id="1_7heqc"]
+[ext_resource type="Script" path="res://script/shielder.gd" id="1_sdmae"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uisug"]
 atlas = ExtResource("1_7heqc")
@@ -42,6 +43,7 @@ animations = [{
 radius = 8.0
 
 [node name="shielder" type="CharacterBody2D"]
+script = ExtResource("1_sdmae")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jawe8")

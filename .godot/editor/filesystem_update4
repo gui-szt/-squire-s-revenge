@@ -1,5 +1,6 @@
-res://script/Global.gd
 res://scenes/game.tscn
 res://scenes/shielder.tscn
 res://scenes/trails.tscn
 res://scenes/teste.tscn
+res://script/Global.gd
+res://script/shielder.gd
