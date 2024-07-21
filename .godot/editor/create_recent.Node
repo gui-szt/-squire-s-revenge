@@ -1,9 +1,9 @@
+AnimationPlayer
 AnimatedSprite2D
 AnimatableBody2D
 Timer
 TouchScreenButton
 Button
-AnimationPlayer
 Sprite2D
 ParallaxLayer
 ParallaxBackground

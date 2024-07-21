@@ -14,25 +14,30 @@ func save_progress():
 	else:
 		progress = 0
 
+func _on_timer_timeout():
+	cooldown=1
+	
 func _process(delta):
-	if Input.is_action_pressed("space"):
-		timer.start()
+	
+	##CHANGE TRAILS
+	if Input.is_action_just_pressed("space"):
 		shielder.upsidedown()
-	if Input.is_action_just_released("space"):
+		cooldown=0
+		timer.start()
 		
+	if Input.is_action_just_released("space"):
 		if cooldown !=1:
 			if shielder.trails==0:
 				$run/AnimationPlayer.play("down")
 				await get_tree().create_timer(1).timeout
 				shielder.trails=1
-				
 			else:
 				$run/AnimationPlayer.play("up")
 				await get_tree().create_timer(1).timeout
 				shielder.trails=0
+			cooldown=0
+		if cooldown ==1:
+			shielder.back()
+			cooldown=0
 		shielder.back()
-	cooldown=0
-
-
-func _on_timer_timeout():
-	cooldown=1
+	

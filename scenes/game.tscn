@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://0cqvt2bevf5i"]
+[gd_scene load_steps=16 format=3 uid="uid://0cqvt2bevf5i"]
 
 [ext_resource type="Script" path="res://script/Global.gd" id="1_2s76x"]
 [ext_resource type="PackedScene" uid="uid://dfn8qobsgilp6" path="res://scenes/teste.tscn" id="2_4b0rk"]
+[ext_resource type="PackedScene" uid="uid://btquqqmpfjb0u" path="res://scenes/background.tscn" id="3_e7pbs"]
 [ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="3_v025j"]
 [ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="4_kuy7r"]
-[ext_resource type="Texture2D" uid="uid://1hjaykbmdo83" path="res://assets/background_set/B1013-1.png" id="5_ssgfb"]
 
 [sub_resource type="BitMap" id="BitMap_fnc3u"]
 
@@ -14,64 +14,16 @@ size = Vector2(400, 200)
 [sub_resource type="Animation" id="Animation_p15bn"]
 resource_name = "back"
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("run/ParallaxBackground:transform")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Transform2D(1, 0, 0, 1, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("run/ParallaxBackground/ParallaxLayer/Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(44, -31), Vector2(-128, -32)]
-}
 
 [sub_resource type="Animation" id="Animation_6qqqe"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = false
-tracks/0/path = NodePath("run/ParallaxBackground:transform")
+tracks/0/path = NodePath("run/shielder:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Transform2D(1, 0, 0, 1, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("run/ParallaxBackground/ParallaxLayer/Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-100, -32)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("run/shielder:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -116,10 +68,51 @@ _data = {
 "up": SubResource("Animation_lqket")
 }
 
+[sub_resource type="Animation" id="Animation_68hcu"]
+resource_name = "background"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-282, -110), Vector2(-864, -110)]
+}
+
+[sub_resource type="Animation" id="Animation_y6b8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-277, -110)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_37iwv"]
+_data = {
+"RESET": SubResource("Animation_y6b8d"),
+"background": SubResource("Animation_68hcu")
+}
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_2s76x")
 
 [node name="run" parent="." instance=ExtResource("2_4b0rk")]
+
+[node name="background" parent="run" instance=ExtResource("3_e7pbs")]
+position = Vector2(-277, -110)
 
 [node name="Camera2D" type="Camera2D" parent="run"]
 position = Vector2(-55, 0)
@@ -143,14 +136,6 @@ scale = Vector2(100, 0.5)
 [node name="shielder" parent="run" instance=ExtResource("4_kuy7r")]
 position = Vector2(-130, -42)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="run"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="run/ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="run/ParallaxBackground/ParallaxLayer"]
-position = Vector2(-128, -32)
-texture = ExtResource("5_ssgfb")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="run"]
 root_node = NodePath("../..")
 libraries = {
@@ -159,6 +144,11 @@ libraries = {
 autoplay = "back"
 
 [node name="Timer" type="Timer" parent="run"]
-wait_time = 0.048
+
+[node name="back" type="AnimationPlayer" parent="run"]
+libraries = {
+"": SubResource("AnimationLibrary_37iwv")
+}
+autoplay = "background"
 
 [connection signal="timeout" from="run/Timer" to="." method="_on_timer_timeout"]
