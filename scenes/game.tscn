@@ -1,19 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://0cqvt2bevf5i"]
+[gd_scene load_steps=28 format=3 uid="uid://0cqvt2bevf5i"]
 
-[ext_resource type="Script" path="res://script/Global.gd" id="1_2s76x"]
+[ext_resource type="Script" path="res://script/game.gd" id="1_2s76x"]
 [ext_resource type="PackedScene" uid="uid://dfn8qobsgilp6" path="res://scenes/teste.tscn" id="2_4b0rk"]
 [ext_resource type="PackedScene" uid="uid://btquqqmpfjb0u" path="res://scenes/background.tscn" id="3_e7pbs"]
 [ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="3_v025j"]
 [ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="4_kuy7r"]
+[ext_resource type="PackedScene" uid="uid://d374g3vr8kxmf" path="res://scenes/obstacles.tscn" id="6_pn5jf"]
 
 [sub_resource type="BitMap" id="BitMap_fnc3u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bae6y"]
 size = Vector2(400, 200)
-
-[sub_resource type="Animation" id="Animation_p15bn"]
-resource_name = "back"
-loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_6qqqe"]
 length = 0.001
@@ -29,6 +26,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-130, -42), Vector2(-130, -42)]
 }
+
+[sub_resource type="Animation" id="Animation_p15bn"]
+resource_name = "back"
+loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_ar281"]
 resource_name = "down"
@@ -68,6 +69,21 @@ _data = {
 "up": SubResource("Animation_lqket")
 }
 
+[sub_resource type="Animation" id="Animation_y6b8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-277, -110)]
+}
+
 [sub_resource type="Animation" id="Animation_68hcu"]
 resource_name = "background"
 length = 3.0
@@ -85,26 +101,106 @@ tracks/0/keys = {
 "values": [Vector2(-282, -110), Vector2(-864, -110)]
 }
 
-[sub_resource type="Animation" id="Animation_y6b8d"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_37iwv"]
+_data = {
+"RESET": SubResource("Animation_y6b8d"),
+"background": SubResource("Animation_68hcu")
+}
+
+[sub_resource type="Animation" id="Animation_uq6cg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("background:position")
+tracks/0/path = NodePath("run/trails0:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-277, -110)]
+"values": [Vector2(506, -32)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_37iwv"]
-_data = {
-"RESET": SubResource("Animation_y6b8d"),
-"background": SubResource("Animation_68hcu")
+[sub_resource type="Animation" id="Animation_wudkh"]
+resource_name = "trail0_default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("run/trails0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(414, -32), Vector2(-298, -32)]
 }
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_am0mf"]
+_data = {
+"RESET": SubResource("Animation_uq6cg"),
+"trail0_default": SubResource("Animation_wudkh")
+}
+
+[sub_resource type="Animation" id="Animation_rklkx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("run/trails1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-565, 36)]
+}
+
+[sub_resource type="Animation" id="Animation_gmo05"]
+resource_name = "trail1_default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("run/trails1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(414, 36), Vector2(-298, 36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hpvga"]
+_data = {
+"RESET": SubResource("Animation_rklkx"),
+"trail1_default": SubResource("Animation_gmo05")
+}
+
+[sub_resource type="Animation" id="Animation_mayws"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_0tuxs"]
+resource_name = "on_trail0"
+
+[sub_resource type="Animation" id="Animation_77rco"]
+resource_name = "on_trail1"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wfef0"]
+_data = {
+"RESET": SubResource("Animation_mayws"),
+"on_trail0": SubResource("Animation_0tuxs"),
+"on_trail1": SubResource("Animation_77rco")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22mql"]
+size = Vector2(113.5, 250.5)
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_2s76x")
@@ -125,13 +221,13 @@ bitmask = SubResource("BitMap_fnc3u")
 shape = SubResource("RectangleShape2D_bae6y")
 action = "space"
 
-[node name="trails" parent="run" instance=ExtResource("3_v025j")]
-position = Vector2(608, -32)
-scale = Vector2(100, 0.5)
+[node name="trails0" parent="run" instance=ExtResource("3_v025j")]
+position = Vector2(506, -32)
+scale = Vector2(50, 0.5)
 
-[node name="trails2" parent="run" instance=ExtResource("3_v025j")]
-position = Vector2(550, 36)
-scale = Vector2(100, 0.5)
+[node name="trails1" parent="run" instance=ExtResource("3_v025j")]
+position = Vector2(-565, 36)
+scale = Vector2(50, 0.5)
 
 [node name="shielder" parent="run" instance=ExtResource("4_kuy7r")]
 position = Vector2(-130, -42)
@@ -143,12 +239,52 @@ libraries = {
 }
 autoplay = "back"
 
-[node name="Timer" type="Timer" parent="run"]
-
 [node name="back" type="AnimationPlayer" parent="run"]
 libraries = {
 "": SubResource("AnimationLibrary_37iwv")
 }
 autoplay = "background"
 
+[node name="Timer" type="Timer" parent="run"]
+wait_time = 0.577
+
+[node name="Trail0" type="AnimationPlayer" parent="run"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_am0mf")
+}
+autoplay = "trail0_default"
+
+[node name="Trail1" type="AnimationPlayer" parent="run"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_hpvga")
+}
+autoplay = "trail1_default"
+
+[node name="obstacless" type="AnimationPlayer" parent="run"]
+libraries = {
+"": SubResource("AnimationLibrary_wfef0")
+}
+
+[node name="obstacles_scene" parent="run" instance=ExtResource("6_pn5jf")]
+position = Vector2(150, -45)
+
+[node name="obstacles_scene2" parent="run" instance=ExtResource("6_pn5jf")]
+position = Vector2(154, 50)
+
+[node name="obstacles_scene3" parent="run" instance=ExtResource("6_pn5jf")]
+position = Vector2(152, 22)
+
+[node name="obstacles_scene4" parent="run" instance=ExtResource("6_pn5jf")]
+position = Vector2(147, -19)
+
+[node name="Area2D" type="Area2D" parent="run"]
+position = Vector2(-207, 223)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="run/Area2D"]
+position = Vector2(-135, -207)
+shape = SubResource("RectangleShape2D_22mql")
+
 [connection signal="timeout" from="run/Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="run/Area2D" to="." method="_on_area_2d_area_entered"]

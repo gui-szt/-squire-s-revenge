@@ -1,7 +1,8 @@
 res://scenes/game.tscn
 res://scenes/shielder.tscn
-res://scenes/trails.tscn
-res://scenes/teste.tscn
+res://scenes/obstacles.tscn
+res://scenes/bosses.tscn
 res://script/Global.gd
-res://script/shielder.gd
-res://scenes/background.tscn
+res://script/game.gd
+res://script/GlobalVars.gd
+res://script/obstacles.gd

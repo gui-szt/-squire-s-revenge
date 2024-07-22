@@ -1,3 +1,91 @@
-[gd_scene format=3 uid="uid://d374g3vr8kxmf"]
+[gd_scene load_steps=11 format=3 uid="uid://d374g3vr8kxmf"]
+
+[ext_resource type="Script" path="res://script/obstacles.gd" id="1_vqm2y"]
+[ext_resource type="Texture2D" uid="uid://cmfu2o6j2urug" path="res://assets/placeholders/rocks.png" id="2_bwbbb"]
+[ext_resource type="Texture2D" uid="uid://cdpkr643sh05q" path="res://assets/placeholders/placeholders.png" id="3_b02n6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4mhw"]
+atlas = ExtResource("2_bwbbb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmhwo"]
+atlas = ExtResource("2_bwbbb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw2g2"]
+atlas = ExtResource("2_bwbbb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ljdv"]
+atlas = ExtResource("2_bwbbb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nd4m2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4mhw")
+}],
+"loop": false,
+"name": &"rock1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmhwo")
+}],
+"loop": false,
+"name": &"rock2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw2g2")
+}],
+"loop": false,
+"name": &"rock3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ljdv")
+}],
+"loop": false,
+"name": &"rock4",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nllsc"]
+size = Vector2(22, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rynix"]
+size = Vector2(21, 18)
 
 [node name="obstacles" type="Node2D"]
+script = ExtResource("1_vqm2y")
+
+[node name="rock" type="Node2D" parent="."]
+
+[node name="rocks" type="AnimatedSprite2D" parent="rock"]
+sprite_frames = SubResource("SpriteFrames_nd4m2")
+animation = &"rock1"
+
+[node name="collision" type="Area2D" parent="rock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock/collision"]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_nllsc")
+
+[node name="obstructed_trail" type="Node2D" parent="."]
+visible = false
+
+[node name="end of trail" type="Sprite2D" parent="obstructed_trail"]
+texture = ExtResource("3_b02n6")
+region_enabled = true
+region_rect = Rect2(31, 171, 30, 22)
+
+[node name="change trail" type="Area2D" parent="obstructed_trail"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstructed_trail/change trail"]
+position = Vector2(2.5, -1)
+shape = SubResource("RectangleShape2D_rynix")
