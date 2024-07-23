@@ -2,7 +2,7 @@ extends Node2D
 
 var cooldown =0
 var obstacle = 0
-
+var i =1
 @onready var timer = $run/Timer
 @onready var shielder = $run/shielder
 func _ready():
@@ -47,5 +47,6 @@ func _process(delta):
 
 
 
-func _on_area_2d_area_entered(area):
-	area.get_parent().queue_free()
+
+##func _on_area_2d_area_entered(area):
+#	area.get_parent().queue_free()

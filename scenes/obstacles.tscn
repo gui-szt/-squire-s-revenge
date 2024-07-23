@@ -1,11 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://d374g3vr8kxmf"]
+[gd_scene load_steps=4 format=3 uid="uid://c3vovli46lcco"]
 
-[ext_resource type="Script" path="res://script/obstacles.gd" id="1_vqm2y"]
-[ext_resource type="PackedScene" uid="uid://lv40vlwdvem3" path="res://scenes/rock.tscn" id="2_deav4"]
+[ext_resource type="PackedScene" uid="uid://bbrxrkqsq5jjc" path="res://scenes/rock.tscn" id="2_deav4"]
 [ext_resource type="PackedScene" uid="uid://d065j7sf4hoas" path="res://scenes/obstructed_trail.tscn" id="3_374kq"]
 
+[sub_resource type="GDScript" id="GDScript_xmjoy"]
+script/source = "extends Node2D
+
+var rocks = 0
+var posit = 0
+
+@onready var obstacles = $\".\"
+
+
+func _rocks():
+	$rock.visible= true
+	await get_tree().create_timer(randi_range(1,4)).timeout
+	rocks= randi_range(1, 4)
+	posit = randi_range(1, 4)
+	
+	match rocks:
+		1:
+			$rock/rocks.play(\"rock1\")
+		2:
+			$rock/rocks.play(\"rock2\")
+		3:
+			$rock/rocks.play(\"rock3\")
+		4:
+			$rock/rocks.play(\"rock4\")
+	match posit:
+		1:
+			$rock/rocks.flip_v= false
+			position.y = -42
+		2:
+			$rock/rocks.flip_v= false
+			position.y = 26
+		3:
+			$rock/rocks.flip_v= true
+			position.y = -15
+		4:
+			$rock/rocks.flip_v= true
+			position.y = 53
+	
+
+"
+
 [node name="obstacles" type="Node2D"]
-script = ExtResource("1_vqm2y")
+script = SubResource("GDScript_xmjoy")
 
 [node name="rock" parent="." instance=ExtResource("2_deav4")]
 visible = false
