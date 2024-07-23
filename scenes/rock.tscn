@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://lv40vlwdvem3"]
+
+[ext_resource type="Texture2D" uid="uid://cmfu2o6j2urug" path="res://assets/placeholders/rocks.png" id="1_yac3w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4mhw"]
+atlas = ExtResource("1_yac3w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmhwo"]
+atlas = ExtResource("1_yac3w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw2g2"]
+atlas = ExtResource("1_yac3w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ljdv"]
+atlas = ExtResource("1_yac3w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nd4m2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4mhw")
+}],
+"loop": false,
+"name": &"rock1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmhwo")
+}],
+"loop": false,
+"name": &"rock2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw2g2")
+}],
+"loop": false,
+"name": &"rock3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ljdv")
+}],
+"loop": false,
+"name": &"rock4",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nllsc"]
+size = Vector2(22, 22)
+
+[node name="rock" type="Node2D"]
+
+[node name="rocks" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nd4m2")
+animation = &"rock1"
+
+[node name="collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_nllsc")

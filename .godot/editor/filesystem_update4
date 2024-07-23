@@ -1,8 +1,9 @@
+res://script/game.gd
+res://script/Spawner.gd
+res://scenes/obstacles.tscn
+res://scenes/spawner.tscn
+res://script/GlobalVars.gd
 res://scenes/game.tscn
 res://scenes/shielder.tscn
-res://scenes/obstacles.tscn
 res://scenes/bosses.tscn
-res://script/Global.gd
-res://script/game.gd
-res://script/GlobalVars.gd
-res://script/obstacles.gd
+res://scenes/rock.tscn

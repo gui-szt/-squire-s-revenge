@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d065j7sf4hoas"]
+
+[ext_resource type="Texture2D" uid="uid://cdpkr643sh05q" path="res://assets/placeholders/placeholders.png" id="1_7g7ah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rynix"]
+size = Vector2(21, 18)
+
+[node name="obstructed_trail" type="Node2D"]
+visible = false
+
+[node name="end of trail" type="Sprite2D" parent="."]
+texture = ExtResource("1_7g7ah")
+region_enabled = true
+region_rect = Rect2(31, 171, 30, 22)
+
+[node name="change trail" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="change trail"]
+position = Vector2(2.5, -1)
+shape = SubResource("RectangleShape2D_rynix")

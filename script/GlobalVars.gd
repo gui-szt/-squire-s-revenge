@@ -2,6 +2,7 @@ extends Node
 
 var level = 1
 var progress = 0
+var obstacle = 1
 const SAVEFILE= "user://save.data"
 func save_progress():
 	var file = FileAccess.open(SAVEFILE,FileAccess.READ_WRITE)
