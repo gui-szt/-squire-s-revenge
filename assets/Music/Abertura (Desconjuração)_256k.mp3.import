@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drkiuunofkfrw"
+path="res://.godot/imported/Abertura (Desconjuração)_256k.mp3-4d805643a4b422096c4bee06bc00ca10.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/Abertura (Desconjuração)_256k.mp3"
+dest_files=["res://.godot/imported/Abertura (Desconjuração)_256k.mp3-4d805643a4b422096c4bee06bc00ca10.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,187 @@
+[gd_scene load_steps=15 format=3 uid="uid://b17h4vefcrv06"]
+
+[ext_resource type="Script" path="res://script/leveel/level_1_1.gd" id="1_81kck"]
+[ext_resource type="PackedScene" uid="uid://btquqqmpfjb0u" path="res://scenes/background.tscn" id="2_70wxq"]
+[ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="3_bk868"]
+[ext_resource type="PackedScene" uid="uid://bwgxpd5xhklnu" path="res://scenes/area_2d.tscn" id="4_1hdc2"]
+[ext_resource type="PackedScene" uid="uid://dayrq31j0yhat" path="res://scenes/spawner3.tscn" id="5_gnlqt"]
+[ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="6_cu3cq"]
+[ext_resource type="PackedScene" uid="uid://6mk656ypr8fg" path="res://scenes/finish.tscn" id="7_rprp3"]
+[ext_resource type="PackedScene" uid="uid://c88iso5co5wxq" path="res://scenes/game_over.tscn" id="8_3s2dk"]
+[ext_resource type="AudioStream" uid="uid://b1cc6uw3pntpk" path="res://assets/Music/Injustiça_256k.mp3" id="9_ketku"]
+
+[sub_resource type="Animation" id="Animation_61lqn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("finish2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(431, -12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-30.0]
+}
+
+[sub_resource type="Animation" id="Animation_2r6fh"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.270222, 0.270222, 0.270222, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-71.014, -30.0]
+}
+
+[sub_resource type="Animation" id="Animation_te2k3"]
+resource_name = "finish"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("finish2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(453, -17), Vector2(-86.4667, -14.6667)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.106237, 0.106237, 0.106237, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-30.0, -71.014]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aft8g"]
+_data = {
+"RESET": SubResource("Animation_61lqn"),
+"fade_in": SubResource("Animation_2r6fh"),
+"finish": SubResource("Animation_te2k3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrpix"]
+
+[node name="level 1-2" type="Node2D"]
+script = ExtResource("1_81kck")
+
+[node name="background" parent="." instance=ExtResource("2_70wxq")]
+position = Vector2(696, -133)
+
+[node name="finish" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_aft8g")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-10, -2.99999)
+rotation = 3.10737
+zoom = Vector2(3.5, 3.5)
+
+[node name="Area2D" parent="." instance=ExtResource("4_1hdc2")]
+position = Vector2(-401, -8)
+scale = Vector2(-5.58852, 14.1639)
+
+[node name="Spawner" parent="." instance=ExtResource("5_gnlqt")]
+position = Vector2(14, 2)
+
+[node name="obs" type="Node2D" parent="."]
+
+[node name="trails" parent="." instance=ExtResource("6_cu3cq")]
+position = Vector2(722, -45)
+
+[node name="trails2" parent="." instance=ExtResource("6_cu3cq")]
+position = Vector2(722, 45)
+
+[node name="shielder" parent="." instance=ExtResource("3_bk868")]
+scale = Vector2(1.01433, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="finish2" parent="." instance=ExtResource("7_rprp3")]
+z_index = 4
+position = Vector2(431, -12)
+
+[node name="game_over" parent="." instance=ExtResource("8_3s2dk")]
+position = Vector2(-3, 2)
+scale = Vector2(0.696276, 0.665294)
+
+[node name="Area2D2" parent="." instance=ExtResource("4_1hdc2")]
+position = Vector2(-139, 0)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(-8, -1)
+scale = Vector2(9.4, 6.92)
+shape = SubResource("RectangleShape2D_vrpix")
+action = "space"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ketku")
+volume_db = -30.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

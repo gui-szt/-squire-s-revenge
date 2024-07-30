@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btquqqmpfjb0u"]
+[gd_scene load_steps=10 format=3 uid="uid://btquqqmpfjb0u"]
 
 [ext_resource type="Texture2D" uid="uid://c2hsy0pvrlkdc" path="res://assets/background_set/B1013-5.png" id="1_xscms"]
 [ext_resource type="Texture2D" uid="uid://edvqt7k3qwq5" path="res://assets/background_set/B1013-3.png" id="2_vifcd"]
@@ -33,9 +33,50 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_dix82"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1022, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i2y7e"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-899, 0), Vector2(-1262, 6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qeagw"]
+_data = {
+"RESET": SubResource("Animation_dix82"),
+"new_animation": SubResource("Animation_i2y7e")
+}
+
 [node name="background" type="Node2D"]
+position = Vector2(585, -150)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(-1022, 0)
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
 position = Vector2(257, 129)
@@ -46,3 +87,9 @@ position = Vector2(766, 127)
 sprite_frames = SubResource("SpriteFrames_2yuy0")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatableBody2D"]
+
+[node name="back" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qeagw")
+}
+autoplay = "new_animation"

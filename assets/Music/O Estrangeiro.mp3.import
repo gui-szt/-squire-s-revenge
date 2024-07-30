@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1k41uigrqk0t"
+path="res://.godot/imported/O Estrangeiro.mp3-ce80ddc7ed79fac8a3195e65c31fcba1.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/O Estrangeiro.mp3"
+dest_files=["res://.godot/imported/O Estrangeiro.mp3-ce80ddc7ed79fac8a3195e65c31fcba1.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
