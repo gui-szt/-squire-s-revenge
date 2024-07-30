@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbrxrkqsq5jjc"]
+[gd_scene load_steps=9 format=3 uid="uid://bbrxrkqsq5jjc"]
 
+[ext_resource type="Script" path="res://script/rock.gd" id="1_gv7t4"]
 [ext_resource type="Texture2D" uid="uid://cmfu2o6j2urug" path="res://assets/placeholders/rocks.png" id="1_yac3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4mhw"]
@@ -54,16 +55,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nllsc"]
-size = Vector2(22, 22)
+size = Vector2(11, 12)
 
 [node name="rock" type="Node2D"]
+script = ExtResource("1_gv7t4")
 
-[node name="rocks" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nd4m2")
 animation = &"rock1"
 
 [node name="collision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
-position = Vector2(3, 1)
+position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_nllsc")
+
+[connection signal="body_entered" from="collision" to="." method="_on_collision_body_entered"]

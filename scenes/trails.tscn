@@ -35,6 +35,7 @@ size = Vector2(22, 13)
 [node name="trails" type="Node2D"]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(100, 1)
 sprite_frames = SubResource("SpriteFrames_b828l")
 animation = &"new_animation"
 autoplay = "new_animation"

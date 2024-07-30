@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxlhexsmvukvf"]
+
+[ext_resource type="Texture2D" uid="uid://cpdgeb44emvrp" path="res://assets/placeholders/falling_cross.png" id="1_6u5rp"]
+[ext_resource type="Script" path="res://script/croos_fall.gd" id="1_rqjd3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubxij"]
+atlas = ExtResource("1_6u5rp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70u31"]
+atlas = ExtResource("1_6u5rp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur0cl"]
+atlas = ExtResource("1_6u5rp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp3bk"]
+atlas = ExtResource("1_6u5rp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pecwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubxij")
+}],
+"loop": false,
+"name": &"rock1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70u31")
+}],
+"loop": false,
+"name": &"rock2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur0cl")
+}],
+"loop": false,
+"name": &"rock3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp3bk")
+}],
+"loop": false,
+"name": &"rock4",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_drkb3"]
+radius = 4.95179
+
+[node name="croos_fall" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_rqjd3")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+rotation = 0.549779
+sprite_frames = SubResource("SpriteFrames_pecwg")
+animation = &"rock3"
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 0.619592
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5.96046e-08)
+shape = SubResource("CircleShape2D_drkb3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

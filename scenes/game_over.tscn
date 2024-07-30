@@ -1,0 +1,240 @@
+[gd_scene load_steps=7 format=3 uid="uid://c88iso5co5wxq"]
+
+[ext_resource type="Script" path="res://script/game_over.gd" id="1_4u1ud"]
+[ext_resource type="Texture2D" uid="uid://bcmhpsnmgc18f" path="res://assets/placeholders/over.png" id="2_4frwu"]
+[ext_resource type="FontFile" uid="uid://fenv4xgdmyyy" path="res://assets/fonts/PixelOperator8.ttf" id="2_d3mh8"]
+
+[sub_resource type="Animation" id="Animation_jnwrm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GAME OVER:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control:show_behind_parent")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_u0cxi"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.505882), Color(1, 1, 1, 0.627451)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GAME OVER:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control:show_behind_parent")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0mevx"]
+_data = {
+"RESET": SubResource("Animation_jnwrm"),
+"new_animation": SubResource("Animation_u0cxi")
+}
+
+[node name="game_over" type="Node2D"]
+position = Vector2(2, -2)
+scale = Vector2(0.895752, 0.872874)
+script = ExtResource("1_4u1ud")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+show_behind_parent = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -303.0
+offset_top = -171.0
+offset_right = 291.0
+offset_bottom = 161.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+show_behind_parent = true
+position = Vector2(303, 171)
+texture = ExtResource("2_4frwu")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = -55.0
+offset_top = 81.0
+offset_right = 46.0
+offset_bottom = 125.0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="menu" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 102.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("2_d3mh8")
+theme_override_font_sizes/font_size = 16
+text = "MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = -75.0
+offset_top = 6.0
+offset_right = 57.0
+offset_bottom = 52.0
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="reload" type="Label" parent="Button2"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 130.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("2_d3mh8")
+theme_override_font_sizes/font_size = 16
+text = "TENTAR
+NOVAMENTE"
+horizontal_alignment = 1
+
+[node name="GAME OVER" type="Label" parent="."]
+visible = false
+offset_left = -128.0
+offset_top = -119.0
+offset_right = 120.0
+offset_bottom = -66.0
+theme_override_fonts/font = ExtResource("2_d3mh8")
+theme_override_font_sizes/font_size = 32
+text = "GAME OVER"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0mevx")
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
