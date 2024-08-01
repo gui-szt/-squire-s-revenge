@@ -12,9 +12,11 @@ func _process(delta):
 
 
 func _on_button_pressed():
+	$AudioStreamPlayer.play()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func _on_button_2_pressed():
+	$AudioStreamPlayer.play()
 	get_tree().reload_current_scene()
 

@@ -44,12 +44,14 @@ func _process(delta):
 			if trails==0:
 				$AnimationPlayer.play("down")
 				$AudioStreamPlayer.stop()
+				$AudioStreamPlayer2.play()
 				await get_tree().create_timer(0.5).timeout
 				$AudioStreamPlayer.play()
 				trails=1
 			else:
 				$AnimationPlayer.play("up")
 				$AudioStreamPlayer.stop()
+				$AudioStreamPlayer2.play()
 				await get_tree().create_timer(0.5).timeout
 				$AudioStreamPlayer.play()
 				trails=0
@@ -65,3 +67,4 @@ func _on_animated_sprite_2d_animation_changed():
 	$AudioStreamPlayer.stream= hurt
 	$AudioStreamPlayer.volume_db=-25
 	$AudioStreamPlayer.play()
+	
