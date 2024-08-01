@@ -27,7 +27,10 @@ func randomi():
 			if obs== 4 or obs==5 or obs==6:
 				obs_anim.flip_h= false
 			else:
-				posit = 35
+				if GlobalVars.level==3:
+					posit=-55
+				else:
+					posit = 35
 		3:
 			obs_anim.flip_v= true
 			if obs== 4 or obs==5 or obs==6:
@@ -42,9 +45,15 @@ func randomi():
 			if obs== 4 or obs==5 or obs==6:
 				obs_anim.flip_h=true
 			if obs==1:
-				posit= 66
+				if GlobalVars.level==3:
+					posit= -24
+				else:
+					posit= 66
 			if obs==2:
-				posit=83
+				if GlobalVars.level==3:
+					posit= -7
+				else:
+					posit=83
 			
 	var rocks= randi_range(1, 4)
 	match rocks:

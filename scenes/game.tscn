@@ -579,8 +579,10 @@ position = Vector2(-1, 8.00001)
 scale = Vector2(1.22642, 1.08235)
 texture = ExtResource("2_pmiq4")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+position = Vector2(0.815381, -7.39133)
+scale = Vector2(0.815381, 0.923916)
+zoom = Vector2(3, 3)
 
 [node name="title" type="Label" parent="."]
 layout_mode = 0
@@ -688,7 +690,7 @@ volume_db = -20.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_is8xn")
-volume_db = -35.0
+volume_db = -30.0
 
 [node name="diary" type="Node2D" parent="."]
 visible = false
@@ -749,7 +751,6 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_jxv2r")
-volume_db = -30.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

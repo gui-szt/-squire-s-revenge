@@ -257,7 +257,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -450,6 +450,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(142, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("medal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_6bk6r"]
 resource_name = "new_animation"
@@ -465,6 +477,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(217, 0), Vector2(142, 0), Vector2(51, 0), Vector2(-80, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("medal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iqcxe"]
@@ -484,12 +508,6 @@ script = ExtResource("1_13aa3")
 [node name="background" parent="." instance=ExtResource("2_6lkta")]
 position = Vector2(664, -131)
 
-[node name="trails" parent="." instance=ExtResource("3_s7rg7")]
-position = Vector2(722, -45)
-
-[node name="trails2" parent="." instance=ExtResource("3_s7rg7")]
-position = Vector2(722, 45)
-
 [node name="Spawner" parent="." instance=ExtResource("5_vw7bv")]
 
 [node name="Area2D" parent="." instance=ExtResource("6_goqcw")]
@@ -499,7 +517,7 @@ position = Vector2(-196, -5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-28, -1)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(4, 4.2)
 
 [node name="mage" type="Node2D" parent="."]
 position = Vector2(-15, -1)
@@ -533,6 +551,7 @@ libraries = {
 }
 
 [node name="medal" parent="." instance=ExtResource("8_78pen")]
+visible = false
 position = Vector2(142, 0)
 metadata/_edit_group_ = true
 
@@ -541,6 +560,12 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="medal/Area2D"]
 position = Vector2(14.0137, 1.00009)
 shape = SubResource("CircleShape2D_t38jw")
+
+[node name="trails" parent="." instance=ExtResource("3_s7rg7")]
+position = Vector2(722, -45)
+
+[node name="trails2" parent="." instance=ExtResource("3_s7rg7")]
+position = Vector2(722, 45)
 
 [node name="shielder" parent="." instance=ExtResource("4_5ioe0")]
 
@@ -560,7 +585,7 @@ volume_db = -30.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_786ft")
-volume_db = -30.0
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="medal/Area2D" to="." method="_on_area_2d_body_entered"]

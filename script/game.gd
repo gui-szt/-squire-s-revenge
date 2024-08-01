@@ -66,10 +66,11 @@ func _on_next_page_pressed():
 		diary=0
 		page=1
 	else:
-		page +=1
 		$AudioStreamPlayer2.play()
+		page +=1
+		
 
 func _on_exit_pressed():
-	$AudioStreamPlayer2.play()
+	$AudioStreamPlayer3.play()
 	diary=0
 	page=1
