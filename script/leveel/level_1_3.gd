@@ -52,6 +52,7 @@ func _on_area_2d_body_entered(body):
 	$Mage_anim.play("get_medal")
 	body.get_node("CollisionShape2D").queue_free()
 	$mage/AnimatedSprite2D.play("death")
+	$AudioStreamPlayer2.play()
 	await get_tree().create_timer(0.5).timeout
 	$fade.play("fade_out")
 	await get_tree().create_timer(0.6).timeout

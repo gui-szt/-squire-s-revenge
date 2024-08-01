@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bkyey1n8700hc"]
+[gd_scene load_steps=50 format=3 uid="uid://bkyey1n8700hc"]
 
 [ext_resource type="Script" path="res://script/leveel/level_1_3.gd" id="1_13aa3"]
 [ext_resource type="PackedScene" uid="uid://btquqqmpfjb0u" path="res://scenes/background.tscn" id="2_6lkta"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://8s582jo8773o" path="res://scenes/medal.tscn" id="8_78pen"]
 [ext_resource type="PackedScene" uid="uid://c88iso5co5wxq" path="res://scenes/game_over.tscn" id="9_3w588"]
 [ext_resource type="AudioStream" uid="uid://c10tcor1svs6v" path="res://assets/Music/2_3.wav" id="10_glayi"]
+[ext_resource type="AudioStream" uid="uid://csrhoramblxtb" path="res://assets/Music/sfx/boss_death.wav" id="11_786ft"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ir552"]
 atlas = ExtResource("7_o0cno")
@@ -555,6 +556,10 @@ action = "space"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_glayi")
+volume_db = -30.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_786ft")
 volume_db = -30.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

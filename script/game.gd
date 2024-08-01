@@ -44,16 +44,19 @@ func _process(delta):
 			
 
 func _on_button_pressed():
+	$AudioStreamPlayer3.play()
 	$AnimationPlayer.play("FADE_OUT")
 	await get_tree().create_timer(0.8).timeout
 	get_tree().change_scene_to_file("res://scenes/map.tscn")
 
 
 func _on_button_2_pressed():
+	$AudioStreamPlayer3.play()
 	get_tree().quit()
 
 
 func _on_button_3_pressed():
+	$AudioStreamPlayer3.play()
 	diary =1
 
 

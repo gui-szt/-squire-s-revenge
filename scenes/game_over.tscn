@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c88iso5co5wxq"]
+[gd_scene load_steps=8 format=3 uid="uid://c88iso5co5wxq"]
 
 [ext_resource type="Script" path="res://script/game_over.gd" id="1_4u1ud"]
 [ext_resource type="Texture2D" uid="uid://bcmhpsnmgc18f" path="res://assets/placeholders/over.png" id="2_4frwu"]
 [ext_resource type="FontFile" uid="uid://fenv4xgdmyyy" path="res://assets/fonts/PixelOperator8.ttf" id="2_d3mh8"]
+[ext_resource type="AudioStream" uid="uid://dlu5nww4aaubc" path="res://assets/Music/sfx/button.wav" id="4_10grk"]
 
 [sub_resource type="Animation" id="Animation_jnwrm"]
 length = 0.001
@@ -235,6 +236,10 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_0mevx")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_10grk")
+volume_db = -30.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

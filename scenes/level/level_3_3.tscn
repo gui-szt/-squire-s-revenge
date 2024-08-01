@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://tdpqm4ka0l7g"]
+[gd_scene load_steps=40 format=3 uid="uid://tdpqm4ka0l7g"]
 
 [ext_resource type="Script" path="res://script/leveel/level_1_3.gd" id="1_e8vru"]
 [ext_resource type="PackedScene" uid="uid://btquqqmpfjb0u" path="res://scenes/background.tscn" id="2_vq478"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dsianf7boq6k5" path="res://assets/placeholders/soldier.png" id="8_6fg8e"]
 [ext_resource type="PackedScene" uid="uid://c88iso5co5wxq" path="res://scenes/game_over.tscn" id="8_b1bc7"]
 [ext_resource type="AudioStream" uid="uid://p73yxis3d8bp" path="res://assets/Music/3_3.wav" id="9_fxu20"]
+[ext_resource type="AudioStream" uid="uid://csrhoramblxtb" path="res://assets/Music/sfx/boss_death.wav" id="10_ixxby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pucx"]
 
@@ -406,6 +407,10 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_fxu20")
+volume_db = -30.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ixxby")
 volume_db = -30.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

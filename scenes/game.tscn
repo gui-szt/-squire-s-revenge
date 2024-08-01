@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://0cqvt2bevf5i"]
+[gd_scene load_steps=82 format=3 uid="uid://0cqvt2bevf5i"]
 
 [ext_resource type="Script" path="res://script/game.gd" id="1_2s76x"]
 [ext_resource type="Texture2D" uid="uid://d2eiw2wkkcy56" path="res://assets/placeholders/menu.png" id="2_pmiq4"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d15ufv05t042g" path="res://assets/placeholders/priest.png" id="7_8o03n"]
 [ext_resource type="Texture2D" uid="uid://dsianf7boq6k5" path="res://assets/placeholders/soldier.png" id="8_f7g1o"]
 [ext_resource type="Texture2D" uid="uid://cdpkr643sh05q" path="res://assets/placeholders/placeholders.png" id="9_lwx27"]
+[ext_resource type="AudioStream" uid="uid://dlu5nww4aaubc" path="res://assets/Music/sfx/button.wav" id="11_jxv2r"]
 
 [sub_resource type="Animation" id="Animation_1oaxd"]
 resource_name = "FADE_OUT"
@@ -690,6 +691,7 @@ stream = ExtResource("5_is8xn")
 volume_db = -35.0
 
 [node name="diary" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="diary"]
 position = Vector2(-1, 8.5)
@@ -744,6 +746,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_constants/line_spacing = 2
 theme_override_fonts/font = ExtResource("3_f8n0k")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_jxv2r")
+volume_db = -30.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
