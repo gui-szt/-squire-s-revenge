@@ -34,12 +34,12 @@ func _process(delta):
 			$diary/description.visible=true
 			$diary/description.text= "I was not that religious\nbut he talked so much\nabout this new religion\nfull of followers\nI listened his words\nand now every sunday\ni go to church\nI thankfull for that\n...\n\nbut I don't regret \nletting him die\n"
 	if page==4:
-		$diary/name.text="THE SOLDIER"
+		$diary/name.text="THE KNIGHT"
 		$diary/AnimatedSprite2D.play("soldier")
 		$diary/description.visible=false
 		if GlobalVars.progress >9:
 			$diary/description.visible=true
-			$diary/description.text= "He was my master\nHe want me in his team\nand I,poor commoner\nwith only a horse,\njust want to survive\na hope,for a better life\naccept everything\nuntil that day \nTHEY ABANDONED ME,\nAFTER ALL THIS TIME\nWE LIVE TOGETHER\nJUST BECAUSE HE WANT\nI DON'T REGRET\nKILLING HIM"
+			$diary/description.text= "He want me in his team\nand I,poor commoner\nwith only a horse,\njust want to survive\na hope,for a better life\naccept everything\n even change my horse\n for a uselles shield,\nuntil that day \nTHEY ABANDONED ME,\nAFTER ALL THIS TIME\nWE LIVE TOGETHER\nJUST BECAUSE HE WANT\nI DON'T REGRET\nKILLING HIM"
 		
 			
 
