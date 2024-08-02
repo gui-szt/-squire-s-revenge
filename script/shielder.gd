@@ -65,6 +65,6 @@ func _process(delta):
 func _on_animated_sprite_2d_animation_changed():
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer.stream= hurt
-	$AudioStreamPlayer.volume_db=-25
+	$AudioStreamPlayer.volume_db=-5
 	$AudioStreamPlayer.play()
 	

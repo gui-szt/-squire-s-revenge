@@ -27,6 +27,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(300, -2)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../medal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ei3g5"]
 resource_name = "new_animation"
@@ -42,6 +54,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(275, -2), Vector2(142, -2), Vector2(-80, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../medal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a1ych"]
@@ -344,7 +368,7 @@ position = Vector2(696, -133)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.505455, 0.4)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(4, 4.2)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
 scale = Vector2(23.24, 18.44)
@@ -411,7 +435,7 @@ volume_db = -30.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ixxby")
-volume_db = -30.0
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="medal/Area2D" to="." method="_on_area_2d_body_entered"]
