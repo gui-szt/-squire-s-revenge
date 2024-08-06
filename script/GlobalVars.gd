@@ -1,24 +1,41 @@
 extends Node
-var level :int =1
-var progress =1
-
-const SAVEFILE= "user://savefile.save"
+var level =4
+var progress =4
+var score =0
+var FILE= "use://data.json"
 
 func _ready():
-	var file = FileAccess.open(SAVEFILE, FileAccess.READ)
-	if level==4:
-		progress= file.get_float()
-	if level ==7:
-		progress= file.get_float()
-	if level == 10:
-		progress= file.get_float()
-	if level >9:
-		level=1
-		save_progress()
-	level=file.get_float()
+	load_data()
+	
+func _process(delta):
+	progress=level
 
-func save_progress():
-	var file = FileAccess.open(SAVEFILE, FileAccess.WRITE)
-	file.store_float(level)
-
-
+func save_game():
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var data={
+		"level" : level,
+		"score" : score
+	}
+	var json_string = JSON.stringify(data)
+	save_file.store_line(json_string)
+	
+	
+func load_data():
+	if not FileAccess.file_exists("user://savegame.save"):
+		return 
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	while save_file.get_position() < save_file.get_length():
+		var json_string = save_file.get_line()
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)
+		if not parse_result == OK:
+			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+			continue
+		var node_data = json.get_data()
+		for i in node_data.keys():
+			if i =="level":
+				level= node_data[i]
+			if i == "score":
+				score= node_data[i]
+func save_score():
+	save_game()

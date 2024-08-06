@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://uakad7wo4k3v"]
+
+[ext_resource type="Script" path="res://script/spawn_fire_rock.gd" id="1_wcgk8"]
+
+[node name="spawn_fire_rock" type="Node2D"]
+script = ExtResource("1_wcgk8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.35
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwgxpd5xhklnu" path="res://scenes/area_2d.tscn" id="4_2y27u"]
 [ext_resource type="PackedScene" uid="uid://6mk656ypr8fg" path="res://scenes/finish.tscn" id="5_oxyvu"]
 [ext_resource type="PackedScene" uid="uid://c88iso5co5wxq" path="res://scenes/game_over.tscn" id="6_lcc2n"]
-[ext_resource type="PackedScene" uid="uid://dayrq31j0yhat" path="res://scenes/spawner3.tscn" id="7_vyreq"]
+[ext_resource type="PackedScene" uid="uid://dayrq31j0yhat" path="res://scenes/spawn_cross.tscn" id="7_vyreq"]
 [ext_resource type="AudioStream" uid="uid://bmvcqcq5s4igh" path="res://assets/Music/Olhos Sempre Abertos_256k.mp3" id="9_gvf04"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pucx"]
@@ -129,7 +129,6 @@ _data = {
 script = ExtResource("1_x4py7")
 
 [node name="background" parent="." instance=ExtResource("1_rwxfe")]
-position = Vector2(696, -133)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.505455, 0.4)
@@ -146,22 +145,22 @@ position = Vector2(722, -45)
 [node name="trails2" parent="." instance=ExtResource("3_76aoo")]
 position = Vector2(722, 45)
 
+[node name="obs" type="Node2D" parent="."]
+
 [node name="Area2D" parent="." instance=ExtResource("4_2y27u")]
 position = Vector2(-148, -7)
 
 [node name="mountain" parent="." instance=ExtResource("5_oxyvu")]
 position = Vector2(563, -9)
 
-[node name="game_over" parent="." instance=ExtResource("6_lcc2n")]
-position = Vector2(-3, 2)
-scale = Vector2(0.696, 0.665)
-
 [node name="Spawner" parent="." instance=ExtResource("7_vyreq")]
 position = Vector2(235, -94)
 
-[node name="obs" type="Node2D" parent="."]
-
 [node name="shielder" parent="." instance=ExtResource("2_aikrh")]
+
+[node name="game_over" parent="." instance=ExtResource("6_lcc2n")]
+position = Vector2(-3, 2)
+scale = Vector2(0.696, 0.665)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0

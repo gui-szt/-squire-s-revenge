@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://btquqqmpfjb0u" path="res://scenes/background.tscn" id="2_70wxq"]
 [ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="3_bk868"]
 [ext_resource type="PackedScene" uid="uid://bwgxpd5xhklnu" path="res://scenes/area_2d.tscn" id="4_1hdc2"]
-[ext_resource type="PackedScene" uid="uid://dayrq31j0yhat" path="res://scenes/spawner3.tscn" id="5_gnlqt"]
 [ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="6_cu3cq"]
 [ext_resource type="PackedScene" uid="uid://6mk656ypr8fg" path="res://scenes/finish.tscn" id="7_rprp3"]
 [ext_resource type="PackedScene" uid="uid://c88iso5co5wxq" path="res://scenes/game_over.tscn" id="8_3s2dk"]
+[ext_resource type="PackedScene" uid="uid://uakad7wo4k3v" path="res://scenes/spawn_fire_rock.tscn" id="9_6ps73"]
 [ext_resource type="AudioStream" uid="uid://b1cc6uw3pntpk" path="res://assets/Music/Injustiça_256k.mp3" id="9_ketku"]
 
 [sub_resource type="Animation" id="Animation_61lqn"]
@@ -130,7 +130,6 @@ _data = {
 script = ExtResource("1_81kck")
 
 [node name="background" parent="." instance=ExtResource("2_70wxq")]
-position = Vector2(696, -133)
 
 [node name="finish" type="AnimationPlayer" parent="."]
 libraries = {
@@ -145,9 +144,6 @@ zoom = Vector2(3.5, 3.5)
 [node name="Area2D" parent="." instance=ExtResource("4_1hdc2")]
 position = Vector2(-401, -8)
 scale = Vector2(-5.58852, 14.1639)
-
-[node name="Spawner" parent="." instance=ExtResource("5_gnlqt")]
-position = Vector2(14, 2)
 
 [node name="obs" type="Node2D" parent="."]
 
@@ -183,5 +179,7 @@ action = "space"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ketku")
 volume_db = -30.0
+
+[node name="spawn_fire_rock" parent="." instance=ExtResource("9_6ps73")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

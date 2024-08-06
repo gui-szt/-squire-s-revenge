@@ -368,7 +368,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jh0ha"]
 
 [node name="Map" type="Node2D"]
+scale = Vector2(0.920004, 1)
 script = ExtResource("1_n64cr")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_02gvd")

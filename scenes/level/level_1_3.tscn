@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://script/leveel/level_1_3.gd" id="1_x1nwf"]
 [ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="2_q5b5j"]
 [ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="3_c0i5l"]
-[ext_resource type="PackedScene" uid="uid://dayrq31j0yhat" path="res://scenes/spawner3.tscn" id="4_hy7cq"]
 [ext_resource type="PackedScene" uid="uid://bwgxpd5xhklnu" path="res://scenes/area_2d.tscn" id="5_82t76"]
 [ext_resource type="Texture2D" uid="uid://du8my0nble0rs" path="res://assets/placeholders/mage.png" id="6_7wb0q"]
 [ext_resource type="PackedScene" uid="uid://c88iso5co5wxq" path="res://scenes/game_over.tscn" id="7_vs8c1"]
 [ext_resource type="PackedScene" uid="uid://8s582jo8773o" path="res://scenes/medal.tscn" id="9_nd04i"]
 [ext_resource type="AudioStream" uid="uid://boi22t0nl04pw" path="res://assets/Music/1_3.wav" id="10_isra7"]
 [ext_resource type="AudioStream" uid="uid://csrhoramblxtb" path="res://assets/Music/sfx/boss_death.wav" id="11_7vt1n"]
+[ext_resource type="PackedScene" uid="uid://uakad7wo4k3v" path="res://scenes/spawn_fire_rock.tscn" id="11_76iex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqwwu"]
 atlas = ExtResource("6_7wb0q")
@@ -307,7 +307,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-15, -1), Vector2(-11, 2), Vector2(-20, 1), Vector2(-25, -5)]
+"values": [Vector2(-5, -1), Vector2(-1, 2), Vector2(-5, 1), Vector2(-9, -5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -458,7 +458,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6, 1.4, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(217, 0), Vector2(142, 0), Vector2(51, 0), Vector2(-80, 0)]
+"values": [Vector2(217, 31), Vector2(142, 31), Vector2(51, 31), Vector2(-80, 31)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iqcxe"]
@@ -476,17 +476,11 @@ radius = 17.5357
 script = ExtResource("1_x1nwf")
 
 [node name="background" parent="." instance=ExtResource("1_6ux8v")]
-position = Vector2(664, -131)
 
 [node name="obs" type="Node2D" parent="."]
 
-[node name="trails" parent="." instance=ExtResource("2_q5b5j")]
-position = Vector2(722, -45)
-
 [node name="trails2" parent="." instance=ExtResource("2_q5b5j")]
-position = Vector2(722, 45)
-
-[node name="Spawner" parent="." instance=ExtResource("4_hy7cq")]
+position = Vector2(720, 28)
 
 [node name="Area2D" parent="." instance=ExtResource("5_82t76")]
 position = Vector2(-196, -5)
@@ -535,7 +529,7 @@ metadata/_edit_group_ = true
 [node name="Area2D" type="Area2D" parent="medal"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="medal/Area2D"]
-position = Vector2(-2, -1)
+position = Vector2(15, 1)
 shape = SubResource("CircleShape2D_t38jw")
 
 [node name="game_over" parent="." instance=ExtResource("7_vs8c1")]
@@ -556,5 +550,9 @@ volume_db = -30.0
 stream = ExtResource("11_7vt1n")
 volume_db = -30.0
 
+[node name="spawn_fire_rock" parent="." instance=ExtResource("11_76iex")]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="medal/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="change_1" from="spawn_fire_rock" to="." method="_on_spawn_fire_rock_change_1"]
+[connection signal="change_2" from="spawn_fire_rock" to="." method="_on_spawn_fire_rock_change_2"]

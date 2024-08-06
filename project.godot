@@ -22,6 +22,8 @@ GlobalVars="*res://script/GlobalVars.gd"
 [display]
 
 window/size/mode=2
+window/size/borderless=true
+window/stretch/mode="viewport"
 
 [input]
 

@@ -128,7 +128,6 @@ _data = {
 script = ExtResource("1_epeda")
 
 [node name="background" parent="." instance=ExtResource("2_gi32s")]
-position = Vector2(696, -133)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.505455, 0.4)
@@ -145,13 +144,13 @@ position = Vector2(722, -45)
 [node name="trails2" parent="." instance=ExtResource("4_v1eef")]
 position = Vector2(722, 45)
 
+[node name="obs" type="Node2D" parent="."]
+
 [node name="Area2D" parent="." instance=ExtResource("5_dywjc")]
 position = Vector2(-148, -7)
 
 [node name="mountain" parent="." instance=ExtResource("6_wak68")]
 position = Vector2(563, -9)
-
-[node name="obs" type="Node2D" parent="."]
 
 [node name="shielder" parent="." instance=ExtResource("3_xi6nd")]
 

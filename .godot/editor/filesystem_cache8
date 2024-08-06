@@ -1,7 +1,7 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1722558463
+::res://::1722915498
 default_bus_layout.tres::AudioBusLayout::8684298558704392435::1722209205::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1722480616::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1722912314::0::1::::<><>::
 icon.svg::CompressedTexture2D::131096168117365931::1721490452::1721490452::1::::<><>::
 reference.txt::TextFile::-1::1722216974::0::1::::<><>::
 ::res://assets/::1722197173
@@ -25,23 +25,20 @@ M1011.png::CompressedTexture2D::2089672210735065937::1548988950::1721495232::1::
 ::res://assets/fonts/::1721947255
 PixelOperator8-Bold.ttf::FontFile::7207052641411293715::1709859550::1721947255::1::::<><>::
 PixelOperator8.ttf::FontFile::360030110769145400::1709859550::1721947255::1::::<><>::
-::res://assets/Music/::1722294602
-1_3.wav::AudioStreamWAV::3387268129068299360::1722216928::1722294526::1::::<><>::
+::res://assets/Music/::1722792938
+1_3.wav::AudioStreamWAV::3387268129068299360::1722564583::1722566443::1::::<><>::
 2_3.wav::AudioStreamWAV::6650518703071710531::1722216246::1722294533::1::::<><>::
-3_3.wav::AudioStreamWAV::1120636898802476877::1722216801::1722294538::1::::<><>::
+3_3.wav::AudioStreamWAV::1120636898802476877::1722564897::1722566443::1::::<><>::
 Abertura (Desconjuração)_256k.mp3::AudioStreamMP3::8373638693479318412::1722199200::1722294546::1::::<><>::
-Corre.mp3::AudioStreamMP3::8382386692892642197::1722219160::1722294550::1::::<><>::
-Família_256k.mp3::AudioStreamMP3::4633214142955546464::1722199332::1722294555::1::::<><>::
-Fantasmas_256k.mp3::AudioStreamMP3::4061937323255072862::1722199284::1722294559::1::::<><>::
-Heilag Vagga.mp3::AudioStreamMP3::238689372859903079::1722219162::1722294564::1::::<><>::
-Injustiça_256k.mp3::AudioStreamMP3::4215637253132117676::1722199756::1722294568::1::::<><>::
-Inverdade_256k.mp3::AudioStreamMP3::7743857210175287734::1722199302::1722294572::1::::<><>::
-Novo Lar_256k.mp3::AudioStreamMP3::2717627540007001849::1722199254::1722294581::1::::<><>::
-O Estrangeiro.mp3::AudioStreamMP3::9006624049761907421::1722219162::1722294585::1::::<><>::
-Olhos Sempre Abertos_256k.mp3::AudioStreamMP3::3272188878024593211::1722199554::1722294590::1::::<><>::
-Ordem_256k.mp3::AudioStreamMP3::7976009161009790004::1722199170::1722294594::1::::<><>::
-Sangue_256k.mp3::AudioStreamMP3::7495449702676124451::1722199242::1722294598::1::::<><>::
-Sukkal_256k.mp3::AudioStreamMP3::7729937672281038166::1722199546::1722294602::1::::<><>::
+Família_256k.mp3::AudioStreamMP3::4633214142955546464::1722565462::1722792938::1::::<><>::
+Fantasmas_256k.mp3::AudioStreamMP3::4061937323255072862::1722565433::1722566442::1::::<><>::
+Injustiça_256k.mp3::AudioStreamMP3::4215637253132117676::1722565597::1722566442::1::::<><>::
+Inverdade_256k.mp3::AudioStreamMP3::7743857210175287734::1722565703::1722566442::1::::<><>::
+Novo Lar_256k.mp3::AudioStreamMP3::2717627540007001849::1722565807::1722566442::1::::<><>::
+Olhos Sempre Abertos_256k.mp3::AudioStreamMP3::3272188878024593211::1722565991::1722566442::1::::<><>::
+Ordem_256k.mp3::AudioStreamMP3::7976009161009790004::1722566078::1722566442::1::::<><>::
+Sangue_256k.mp3::AudioStreamMP3::7495449702676124451::1722566220::1722566442::1::::<><>::
+Sukkal_256k.mp3::AudioStreamMP3::7729937672281038166::1722566403::1722566442::1::::<><>::
 ::res://assets/Music/sfx/::1722294517
 2_3.wav::AudioStreamWAV::5780591693486584690::1722216246::1722216839::1::::<><>::
 boss_death.wav::AudioStreamWAV::6071785888197808459::1722200908::1722209663::1::::<><>::
@@ -52,11 +49,12 @@ jump.wav::AudioStreamWAV::806247065102118627::1722201202::1722209663::1::::<><>:
 rock_metal_slide_1.wav::AudioStreamWAV::8063951263534104255::1722205814::1722294517::1::::<><>::
 runmp3.mp3::AudioStreamMP3::5524895161080249525::1722210220::1722210222::1::::<><>::
 runmp3.wav::AudioStreamWAV::5465550119898480805::1722213558::1722213560::1::::<><>::
-::res://assets/placeholders/::1722558456
+::res://assets/placeholders/::1722889384
 57ce43c48c1beb79f22632ca5fc2943d.jpg::CompressedTexture2D::7864555977492303203::1721944086::1721944089::1::::<><>::
 180.png::CompressedTexture2D::5059653590653620776::1722307180::1722307191::1::::<><>::
 Captura de tela de 2024-07-25 19-40-12.png::CompressedTexture2D::6489727647011083909::1721947212::1721947255::1::::<><>::
 diary.png::CompressedTexture2D::7941877779336718375::1722288124::1722288126::1::::<><>::
+end.png::CompressedTexture2D::6948163811503179371::1722788784::1722788786::1::::<><>::
 falling_cross.png::CompressedTexture2D::5832238698997232933::1722052173::1722052207::1::::<><>::
 finich1.png::CompressedTexture2D::3109094575963074453::1721962095::1721962099::1::::<><>::
 finich2.png::CompressedTexture2D::5269872702695544493::1721962095::1721962099::1::::<><>::
@@ -70,59 +68,72 @@ icon_144.png::CompressedTexture2D::1978023751638846505::1722307109::1722307119::
 mage.png::CompressedTexture2D::8631936185917371368::1722026400::1722026402::1::::<><>::
 map.png::CompressedTexture2D::1537542227159937786::1721955171::1721955173::1::::<><>::
 medals.png::CompressedTexture2D::8688223401841475727::1722022855::1722022858::1::::<><>::
-menu.png::CompressedTexture2D::9063144816314432107::1722306982::1722306994::1::::<><>::
+medal_empty.png::CompressedTexture2D::2066048468026753999::1722786341::1722786342::1::::<><>::
+medal_empty_1.png::CompressedTexture2D::5867431405783094840::1722787807::1722787809::1::::<><>::
+medal_empty_2.png::CompressedTexture2D::184478055667087643::1722787908::1722787910::1::::<><>::
+medal_empty_3.png::CompressedTexture2D::275817186207091459::1722787941::1722787955::1::::<><>::
+menu.png::CompressedTexture2D::9063144816314432107::1722783666::1722786342::1::::<><>::
 over.png::CompressedTexture2D::2552023675931934719::1721965704::1721965706::1::::<><>::
-placeholders.png::CompressedTexture2D::5015012767354977288::1722282594::1722282595::1::::<><>::
+placeholders.png::CompressedTexture2D::5015012767354977288::1722882266::1722882268::1::::<><>::
 priest.png::CompressedTexture2D::9047327730114725768::1722112638::1722112640::1::::<><>::
 rocks.png::CompressedTexture2D::5626692719765296290::1721569922::1721570342::1::::<><>::
 rotate_cross.png::CompressedTexture2D::5033008752243927578::1722051965::1722052207::1::::<><>::
 soldier.png::CompressedTexture2D::8439199786032429166::1722196773::1722196774::1::::<><>::
 sword.png::CompressedTexture2D::2091107338822698279::1722126710::1722126712::1::::<><>::
-sword_big.png::CompressedTexture2D::6766691328551845890::1722191793::1722191796::1::::<><>::
-::res://scenes/::1722557431
+sword_big2.png::CompressedTexture2D::1753438348511151691::1722887935::1722887938::1::::<><>::
+sword_big3.png::CompressedTexture2D::4800641191643716052::1722887935::1722887938::1::::<><>::
+sword_big.png::CompressedTexture2D::6766691328551845890::1722889380::1722889384::1::::<><>::
+::res://scenes/::1722912453
 area_2d.tscn::PackedScene::3944384992965332506::1722047419::0::1::::<><>::res://script/area_2d.gd
-background.tscn::PackedScene::3754282529038304482::1722557431::0::1::::<><>::uid://c2hsy0pvrlkdc::::res://assets/background_set/B1013-5.png<>uid://edvqt7k3qwq5::::res://assets/background_set/B1013-3.png
+background.tscn::PackedScene::3754282529038304482::1722727675::0::1::::<><>::uid://c2hsy0pvrlkdc::::res://assets/background_set/B1013-5.png<>uid://edvqt7k3qwq5::::res://assets/background_set/B1013-3.png
 bosses.tscn::PackedScene::6102874120172789032::1721774786::0::1::::<><>::
-croos_fall.tscn::PackedScene::4023905641205107559::1722097037::0::1::::<><>::uid://cpdgeb44emvrp::::res://assets/placeholders/falling_cross.png<>res://script/croos_fall.gd
-cross_rotation.tscn::PackedScene::5468326182603877649::1722120558::0::1::::<><>::res://script/cross_rotation.gd<>uid://cdya6ifhexsq1::::res://assets/placeholders/rotate_cross.png
+croos_fall.tscn::PackedScene::4023905641205107559::1722781887::0::1::::<><>::uid://cpdgeb44emvrp::::res://assets/placeholders/falling_cross.png<>res://script/croos_fall.gd
+cross_rotation.tscn::PackedScene::5468326182603877649::1722818398::0::1::::<><>::res://script/cross_rotation.gd<>uid://cdya6ifhexsq1::::res://assets/placeholders/rotate_cross.png
+end.tscn::PackedScene::6107293238563825841::1722912453::0::1::::<><>::res://script/end.gd<>uid://c580iiyorsds2::::res://assets/placeholders/end.png<>uid://fenv4xgdmyyy::::res://assets/fonts/PixelOperator8.ttf<>uid://b7ammif75m4wa::::res://assets/Music/Família_256k.mp3
+endless.tscn::PackedScene::8478255570888423963::1722912453::0::1::::<><>::res://script/endless.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://fenv4xgdmyyy::::res://assets/fonts/PixelOperator8.ttf<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://boi22t0nl04pw::::res://assets/Music/1_3.wav<>uid://du8my0nble0rs::::res://assets/placeholders/mage.png<>uid://d15ufv05t042g::::res://assets/placeholders/priest.png<>uid://dsianf7boq6k5::::res://assets/placeholders/soldier.png
 finish.tscn::PackedScene::2201290840067080556::1721999514::0::1::::<><>::uid://dnr6r1f7dbxbc::::res://assets/placeholders/finich4.png<>res://script/finish.gd
 fire_ball.tscn::PackedScene::6654500260801823961::1722102305::0::1::::<><>::res://script/fire_ball.gd<>uid://c04tuk1cuwvxo::::res://assets/placeholders/fire_ball.png
-game.tscn::PackedScene::1759859859720180320::1722557431::0::1::::<><>::res://script/game.gd<>uid://d2eiw2wkkcy56::::res://assets/placeholders/menu.png<>uid://fenv4xgdmyyy::::res://assets/fonts/PixelOperator8.ttf<>uid://drkiuunofkfrw::::res://assets/Music/Abertura (Desconjuração)_256k.mp3<>uid://bh1ct3iifsqrh::::res://assets/Music/sfx/cartaslide.mp3<>uid://dlfdtjdxmqulb::::res://assets/placeholders/diary.png<>uid://du8my0nble0rs::::res://assets/placeholders/mage.png<>uid://d15ufv05t042g::::res://assets/placeholders/priest.png<>uid://dsianf7boq6k5::::res://assets/placeholders/soldier.png<>uid://cdpkr643sh05q::::res://assets/placeholders/placeholders.png<>uid://dlu5nww4aaubc::::res://assets/Music/sfx/button.wav
-game_over.tscn::PackedScene::7157716335339482630::1722473645::0::1::::<><>::res://script/game_over.gd<>uid://bcmhpsnmgc18f::::res://assets/placeholders/over.png<>uid://fenv4xgdmyyy::::res://assets/fonts/PixelOperator8.ttf<>uid://dlu5nww4aaubc::::res://assets/Music/sfx/button.wav
-map.tscn::PackedScene::3925268268291773706::1722217024::0::1::::<><>::uid://v52di2bikntq::::res://assets/placeholders/map.png<>res://script/map.gd<>uid://cdpkr643sh05q::::res://assets/placeholders/placeholders.png<>uid://beyo6tnc3d76d::::res://assets/Music/Novo Lar_256k.mp3
+game.tscn::PackedScene::1759859859720180320::1722912453::0::1::::<><>::res://script/game.gd<>uid://d2eiw2wkkcy56::::res://assets/placeholders/menu.png<>uid://fenv4xgdmyyy::::res://assets/fonts/PixelOperator8.ttf<>uid://drkiuunofkfrw::::res://assets/Music/Abertura (Desconjuração)_256k.mp3<>uid://bh1ct3iifsqrh::::res://assets/Music/sfx/cartaslide.mp3<>uid://dlfdtjdxmqulb::::res://assets/placeholders/diary.png<>uid://du8my0nble0rs::::res://assets/placeholders/mage.png<>uid://d15ufv05t042g::::res://assets/placeholders/priest.png<>uid://dsianf7boq6k5::::res://assets/placeholders/soldier.png<>uid://cdpkr643sh05q::::res://assets/placeholders/placeholders.png<>uid://dlu5nww4aaubc::::res://assets/Music/sfx/button.wav<>uid://4o2rs8f43r1h::::res://assets/placeholders/medal_empty.png<>uid://cpuh0de1ngw6c::::res://assets/placeholders/medal_empty_1.png<>uid://cvmldtv0stcl::::res://assets/placeholders/medal_empty_2.png<>uid://d6uw0c6krkrr::::res://assets/placeholders/medal_empty_3.png<>uid://cdya6ifhexsq1::::res://assets/placeholders/rotate_cross.png<>uid://c04tuk1cuwvxo::::res://assets/placeholders/fire_ball.png
+game_over.tscn::PackedScene::7157716335339482630::1722780896::0::1::::<><>::res://script/game_over.gd<>uid://bcmhpsnmgc18f::::res://assets/placeholders/over.png<>uid://fenv4xgdmyyy::::res://assets/fonts/PixelOperator8.ttf<>uid://dlu5nww4aaubc::::res://assets/Music/sfx/button.wav
+map.tscn::PackedScene::3925268268291773706::1722862284::0::1::::<><>::uid://v52di2bikntq::::res://assets/placeholders/map.png<>res://script/map.gd<>uid://cdpkr643sh05q::::res://assets/placeholders/placeholders.png<>uid://beyo6tnc3d76d::::res://assets/Music/Novo Lar_256k.mp3
 medal.tscn::PackedScene::2355272513325184470::1722181679::0::1::::<><>::uid://dv1v1ggs6dffj::::res://assets/placeholders/medals.png
 obstacles.tscn::PackedScene::6782369053131872834::1721774937::0::1::::<><>::uid://bbrxrkqsq5jjc::::res://scenes/rock.tscn<>uid://d065j7sf4hoas::::res://scenes/obstructed_trail.tscn
 obstructed_trail.tscn::PackedScene::8979818143154010098::1721692302::0::1::::<><>::uid://cdpkr643sh05q::::res://assets/placeholders/placeholders.png
 rock.tscn::PackedScene::2493131349270942472::1722091160::0::1::::<><>::res://script/rock.gd<>uid://cmfu2o6j2urug::::res://assets/placeholders/rocks.png
-shielder.tscn::PackedScene::3833946974000548290::1722473647::0::1::::<><>::uid://cdpkr643sh05q::::res://assets/placeholders/placeholders.png<>res://script/shielder.gd<>uid://dm5idmvc5siuh::::res://assets/Music/sfx/rock_metal_slide_1.wav<>uid://lqs1hx3560ol::::res://assets/Music/sfx/jump.wav
-spawner3.tscn::PackedScene::7209869390018243487::1722181679::0::1::::<><>::res://script/Spawner.gd
-sword.tscn::PackedScene::5736751087212075101::1722196359::0::1::::<><>::uid://417h5uroqj5h::::res://assets/placeholders/sword.png<>res://script/sword.gd<>uid://c3n3ogxue44xy::::res://assets/placeholders/sword_big.png
+shielder.tscn::PackedScene::3833946974000548290::1722818398::0::1::::<><>::uid://cdpkr643sh05q::::res://assets/placeholders/placeholders.png<>res://script/shielder.gd<>uid://dm5idmvc5siuh::::res://assets/Music/sfx/rock_metal_slide_1.wav<>uid://lqs1hx3560ol::::res://assets/Music/sfx/jump.wav
+spawn_cross.tscn::PackedScene::7209869390018243487::1722912453::0::1::::<><>::res://script/spawn_cross.gd
+spawn_fire_rock.tscn::PackedScene::1404384250711544445::1722912453::0::1::::<><>::res://script/spawn_fire_rock.gd
+sword.tscn::PackedScene::5736751087212075101::1722912453::0::1::::<><>::uid://417h5uroqj5h::::res://assets/placeholders/sword.png<>res://script/sword.gd<>uid://c3n3ogxue44xy::::res://assets/placeholders/sword_big.png
 teste.tscn::PackedScene::7539076151233903593::1721524877::0::1::::<><>::
 trails.tscn::PackedScene::1932115460710652128::1721958118::0::1::::<><>::uid://cdpkr643sh05q::::res://assets/placeholders/placeholders.png
-::res://scenes/level/::1722473653
-level_1_1.tscn::PackedScene::8423945545577598390::1722473157::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://dayrq31j0yhat::::res://scenes/spawner3.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://dlvvx8v2xaxu7::::res://assets/Music/Ordem_256k.mp3
-level_1_2.tscn::PackedScene::4277868622784576909::1722214911::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://dayrq31j0yhat::::res://scenes/spawner3.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://b1cc6uw3pntpk::::res://assets/Music/Injustiça_256k.mp3
-level_1_3.tscn::PackedScene::2485425793658222849::1722473649::0::1::::<><>::uid://btquqqmpfjb0u::::res://scenes/background.tscn<>res://script/leveel/level_1_3.gd<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://dayrq31j0yhat::::res://scenes/spawner3.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://du8my0nble0rs::::res://assets/placeholders/mage.png<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://8s582jo8773o::::res://scenes/medal.tscn<>uid://boi22t0nl04pw::::res://assets/Music/1_3.wav<>uid://csrhoramblxtb::::res://assets/Music/sfx/boss_death.wav
-level_2_1.tscn::PackedScene::8968249328797618687::1722217260::0::1::::<><>::uid://btquqqmpfjb0u::::res://scenes/background.tscn<>res://script/leveel/level_1_1.gd<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://dayrq31j0yhat::::res://scenes/spawner3.tscn<>uid://bmvcqcq5s4igh::::res://assets/Music/Olhos Sempre Abertos_256k.mp3
-level_2_2.tscn::PackedScene::8842248742375948344::1722217373::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://dayrq31j0yhat::::res://scenes/spawner3.tscn<>uid://dilggxtm7sgj3::::res://assets/Music/Inverdade_256k.mp3
-level_2_3.tscn::PackedScene::3138141300428347516::1722473651::0::1::::<><>::res://script/leveel/level_1_3.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://dayrq31j0yhat::::res://scenes/spawner3.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://d15ufv05t042g::::res://assets/placeholders/priest.png<>uid://8s582jo8773o::::res://scenes/medal.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://c10tcor1svs6v::::res://assets/Music/2_3.wav<>uid://csrhoramblxtb::::res://assets/Music/sfx/boss_death.wav
-level_3_1.tscn::PackedScene::3812852880460228263::1722217661::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://de137xq7vulpj::::res://assets/Music/Sangue_256k.mp3
-level_3_2.tscn::PackedScene::8812051215857779582::1722217742::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://dieo7dnc0tnwo::::res://assets/Music/Sukkal_256k.mp3
-level_3_3.tscn::PackedScene::1340721165513650362::1722473653::0::1::::<><>::res://script/leveel/level_1_3.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://8s582jo8773o::::res://scenes/medal.tscn<>uid://dsianf7boq6k5::::res://assets/placeholders/soldier.png<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://p73yxis3d8bp::::res://assets/Music/3_3.wav<>uid://csrhoramblxtb::::res://assets/Music/sfx/boss_death.wav
-::res://script/::1722482556
-area_2d.gd::GDScript::-1::1722005116::0::1::::<>Area2D<>::
+::res://scenes/level/::1722912453
+level_1_1.tscn::PackedScene::8423945545577598390::1722818627::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://dlvvx8v2xaxu7::::res://assets/Music/Ordem_256k.mp3<>uid://uakad7wo4k3v::::res://scenes/spawn_fire_rock.tscn
+level_1_2.tscn::PackedScene::4277868622784576909::1722818640::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://uakad7wo4k3v::::res://scenes/spawn_fire_rock.tscn<>uid://b1cc6uw3pntpk::::res://assets/Music/Injustiça_256k.mp3
+level_1_3.tscn::PackedScene::2485425793658222849::1722912453::0::1::::<><>::uid://btquqqmpfjb0u::::res://scenes/background.tscn<>res://script/leveel/level_1_3.gd<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://du8my0nble0rs::::res://assets/placeholders/mage.png<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://8s582jo8773o::::res://scenes/medal.tscn<>uid://boi22t0nl04pw::::res://assets/Music/1_3.wav<>uid://csrhoramblxtb::::res://assets/Music/sfx/boss_death.wav<>uid://uakad7wo4k3v::::res://scenes/spawn_fire_rock.tscn
+level_2_1.tscn::PackedScene::8968249328797618687::1722819207::0::1::::<><>::uid://btquqqmpfjb0u::::res://scenes/background.tscn<>res://script/leveel/level_1_1.gd<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://dayrq31j0yhat::::res://scenes/spawn_cross.tscn<>uid://bmvcqcq5s4igh::::res://assets/Music/Olhos Sempre Abertos_256k.mp3
+level_2_2.tscn::PackedScene::8842248742375948344::1722819231::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://dayrq31j0yhat::::res://scenes/spawn_cross.tscn<>uid://dilggxtm7sgj3::::res://assets/Music/Inverdade_256k.mp3
+level_2_3.tscn::PackedScene::3138141300428347516::1722819247::0::1::::<><>::res://script/leveel/level_1_3.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://dayrq31j0yhat::::res://scenes/spawn_cross.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://d15ufv05t042g::::res://assets/placeholders/priest.png<>uid://8s582jo8773o::::res://scenes/medal.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://c10tcor1svs6v::::res://assets/Music/2_3.wav<>uid://csrhoramblxtb::::res://assets/Music/sfx/boss_death.wav
+level_3_1.tscn::PackedScene::3812852880460228263::1722820179::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://de137xq7vulpj::::res://assets/Music/Sangue_256k.mp3
+level_3_2.tscn::PackedScene::8812051215857779582::1722820762::0::1::::<><>::res://script/leveel/level_1_1.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://bwgxpd5xhklnu::::res://scenes/area_2d.tscn<>uid://6mk656ypr8fg::::res://scenes/finish.tscn<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://dieo7dnc0tnwo::::res://assets/Music/Sukkal_256k.mp3
+level_3_3.tscn::PackedScene::1340721165513650362::1722912453::0::1::::<><>::res://script/leveel/level_1_3.gd<>uid://btquqqmpfjb0u::::res://scenes/background.tscn<>uid://buvgst1h3p5fi::::res://scenes/shielder.tscn<>uid://2r6wohghpdsi::::res://scenes/trails.tscn<>uid://8s582jo8773o::::res://scenes/medal.tscn<>uid://dsianf7boq6k5::::res://assets/placeholders/soldier.png<>uid://c88iso5co5wxq::::res://scenes/game_over.tscn<>uid://p73yxis3d8bp::::res://assets/Music/3_3.wav<>uid://csrhoramblxtb::::res://assets/Music/sfx/boss_death.wav
+::res://script/::1722912388
+area_2d.gd::GDScript::-1::1722733943::0::1::::<>Area2D<>::
 croos_fall.gd::GDScript::-1::1722097037::0::1::::<>Node2D<>::
 cross_rotation.gd::GDScript::-1::1722105202::0::1::::<>Node2D<>::
+end.gd::GDScript::-1::1722793587::0::1::::<>Control<>::
+endless.gd::GDScript::-1::1722821994::0::1::::<>Node2D<>::
 finish.gd::GDScript::-1::1721999503::0::1::::<>Node2D<>::
 fire_ball.gd::GDScript::-1::1722006324::0::1::::<>Node2D<>::
-game.gd::GDScript::-1::1722482556::0::1::::<>Control<>::
-game_over.gd::GDScript::-1::1722473645::0::1::::<>Node2D<>::
-GlobalVars.gd::GDScript::-1::1722295063::0::1::::<>Node<>::
-map.gd::GDScript::-1::1722208423::0::1::::<>Node2D<>::
+game.gd::GDScript::-1::1722803623::0::1::::<>Control<>::
+game_over.gd::GDScript::-1::1722727421::0::1::::<>Node2D<>::
+GlobalVars.gd::GDScript::-1::1722912388::0::1::::<>Node<>::
+map.gd::GDScript::-1::1722847236::0::1::::<>Node2D<>::
 rock.gd::GDScript::-1::1722040996::0::1::::<>Node2D<>::
-shielder.gd::GDScript::-1::1722473645::0::1::::<>CharacterBody2D<>::
-Spawner.gd::GDScript::-1::1722181645::0::1::::<>Node2D<>::
-sword.gd::GDScript::-1::1722196359::0::1::::<>Node2D<>::
-::res://script/leveel/::1722473645
-level_1_1.gd::GDScript::-1::1722214768::0::1::::<>Node2D<>::
-level_1_3.gd::GDScript::-1::1722473645::0::1::::<>Node2D<>::
+shielder.gd::GDScript::-1::1722813852::0::1::::<>CharacterBody2D<>::
+spawn_cross.gd::GDScript::-1::1722804492::0::1::::<>Node2D<>::
+spawn_fire_rock.gd::GDScript::-1::1722811212::0::1::::<>Node2D<>::
+spawn_swords.gd::GDScript::-1::1722804246::0::1::::<>Node2D<>::
+sword.gd::GDScript::-1::1722891706::0::1::::<>Node2D<>::
+::res://script/leveel/::1722889845
+level_1_1.gd::GDScript::-1::1722797670::0::1::::<>Node2D<>::
+level_1_3.gd::GDScript::-1::1722889845::0::1::::<>Node2D<>::

@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_area_entered(area):
-	area.get_parent().queue_free()
+	if not area.get_parent().is_in_group("swords"):
+		area.get_parent().queue_free()

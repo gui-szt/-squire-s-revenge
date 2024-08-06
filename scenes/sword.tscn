@@ -1,35 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cny6pm2qysocr"]
+[gd_scene load_steps=15 format=3 uid="uid://cny6pm2qysocr"]
 
 [ext_resource type="Texture2D" uid="uid://417h5uroqj5h" path="res://assets/placeholders/sword.png" id="1_c1c2e"]
 [ext_resource type="Script" path="res://script/sword.gd" id="1_mwhms"]
 [ext_resource type="Texture2D" uid="uid://c3n3ogxue44xy" path="res://assets/placeholders/sword_big.png" id="2_cgnkr"]
-
-[sub_resource type="Animation" id="Animation_s5n74"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-420, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_rgqsi"]
 resource_name = "cut_down"
@@ -41,10 +14,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 1, 1.5, 2, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 1, 1.5, 1.8, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.5708, 1.5708, 0.809833, -0.015708, -0.015708, 0.809833, 1.5708]
+"values": [1.5708, 1.5708, 0.809833, -0.015708, -0.0698132, -0.015708, 0.809833, 1.5708]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -56,7 +29,19 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 1, 2.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-175, 120), Vector2(-175, 70), Vector2(-175, 70), Vector2(-175, 70), Vector2(-175, 120)]
+"values": [Vector2(-175, 120), Vector2(-175, 70), Vector2(-175, 70), Vector2(-175, 70), Vector2(-175, 150)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_43vm5"]
@@ -72,7 +57,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 1, 2.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-180, -120), Vector2(-180, -65), Vector2(-180, -65), Vector2(-180, -65), Vector2(-180, -120)]
+"values": [Vector2(-180, -120), Vector2(-180, -65), Vector2(-180, -65), Vector2(-180, -65), Vector2(-180, -150)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -81,15 +66,27 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 1, 1.5, 2, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.2, 1, 1.5, 1.8, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-1.5708, -0.809833, 0.00174533, 0.00174533, -0.809833, -1.5708]
+"values": [-1.5708, -0.809833, 0.00174533, 0.0523599, 0.00174533, -0.809833, -1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_qfa3j"]
 resource_name = "lunge_0"
-length = 3.0
+length = 2.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -97,15 +94,15 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.8, 2, 3),
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8, 1.7, 2.6),
 "transitions": PackedFloat32Array(1, 1, 1, 0.31864, 0.329877, 1),
 "update": 0,
-"values": [Vector2(-420, 5), Vector2(-340, 5), Vector2(-345, 5), Vector2(-340, 5), Vector2(-100, 5), Vector2(-420, 5)]
+"values": [Vector2(-662, 5), Vector2(-520, 5), Vector2(-550, 5), Vector2(-340, 5), Vector2(-70, 5), Vector2(-600, 5)]
 }
 
 [sub_resource type="Animation" id="Animation_tr8b8"]
 resource_name = "lunge_1"
-length = 3.0
+length = 2.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -113,7 +110,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.8, 2, 3),
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8, 1.8, 2.6),
 "transitions": PackedFloat32Array(1, 1, 1, 0.517632, 0.535887, 1),
 "update": 0,
 "values": [Vector2(-420, 85), Vector2(-340, 85), Vector2(-345, 85), Vector2(-340, 85), Vector2(-100, 85), Vector2(-420, 85)]
@@ -121,7 +118,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_1lhh8"]
 resource_name = "lunge_2"
-length = 3.0
+length = 2.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -129,7 +126,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.8, 2, 3),
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8, 1.8, 2.6),
 "transitions": PackedFloat32Array(1, 1, 1, 0.517632, 0.517633, 1),
 "update": 0,
 "values": [Vector2(-420, -70), Vector2(-340, -70), Vector2(-345, -70), Vector2(-340, -70), Vector2(-100, -70), Vector2(-420, -70)]
@@ -137,7 +134,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3y6u7"]
 _data = {
-"RESET": SubResource("Animation_s5n74"),
 "cut_down": SubResource("Animation_rgqsi"),
 "cut_up": SubResource("Animation_43vm5"),
 "lunge_0": SubResource("Animation_qfa3j"),
@@ -149,9 +145,9 @@ _data = {
 atlas = ExtResource("1_c1c2e")
 region = Rect2(0, 0, 50, 230)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnk0j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsc8b"]
 atlas = ExtResource("2_cgnkr")
-region = Rect2(0, 0, 90, 240)
+region = Rect2(0, 0, 90, 300)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4x38q"]
 animations = [{
@@ -165,58 +161,53 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qnk0j")
+"texture": SubResource("AtlasTexture_rsc8b")
 }],
 "loop": true,
 "name": &"spear",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hx8es"]
-height = 135.753
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfjlc"]
+size = Vector2(13.8017, 167.027)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_elgyn"]
-radius = 11.4084
-height = 96.7386
+[sub_resource type="CircleShape2D" id="CircleShape2D_icui1"]
+radius = 34.0588
 
-[node name="sword" type="Node2D"]
-position = Vector2(-420, 0)
+[node name="sword" type="Node2D" groups=["swords"]]
+position = Vector2(-175, 150)
+rotation = 1.5708
 script = ExtResource("1_mwhms")
+metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3y6u7")
 }
-autoplay = "RESET"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(108, 1)
+position = Vector2(98, 0)
 rotation = 1.57008
+scale = Vector2(1.025, 1.025)
 sprite_frames = SubResource("SpriteFrames_4x38q")
-animation = &"small"
-autoplay = "spear"
-
-[node name="timer_rock" type="Timer" parent="."]
-wait_time = 3.0
+animation = &"spear"
+frame_progress = 0.142357
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="sword" type="CollisionShape2D" parent="Area2D"]
 visible = false
-position = Vector2(126, 0)
+position = Vector2(126.251, 0.808803)
 rotation = -1.58715
-shape = SubResource("CapsuleShape2D_hx8es")
+shape = SubResource("RectangleShape2D_vfjlc")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+[node name="spear" type="CollisionShape2D" parent="Area2D"]
 visible = false
-position = Vector2(163, -9.53674e-07)
-rotation = -1.55665
-shape = SubResource("CapsuleShape2D_elgyn")
+position = Vector2(183, -3)
+shape = SubResource("CircleShape2D_icui1")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(163, 1)
-rotation = 0.0364865
-shape = SubResource("CapsuleShape2D_elgyn")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

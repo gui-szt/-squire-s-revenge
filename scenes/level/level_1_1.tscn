@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="2_mqv7r"]
 [ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="3_4eua2"]
 [ext_resource type="PackedScene" uid="uid://bwgxpd5xhklnu" path="res://scenes/area_2d.tscn" id="5_uvvmg"]
-[ext_resource type="PackedScene" uid="uid://dayrq31j0yhat" path="res://scenes/spawner3.tscn" id="6_yjnw3"]
 [ext_resource type="PackedScene" uid="uid://6mk656ypr8fg" path="res://scenes/finish.tscn" id="7_6hbdy"]
 [ext_resource type="PackedScene" uid="uid://c88iso5co5wxq" path="res://scenes/game_over.tscn" id="7_c8sa6"]
 [ext_resource type="AudioStream" uid="uid://dlvvx8v2xaxu7" path="res://assets/Music/Ordem_256k.mp3" id="9_tmlse"]
+[ext_resource type="PackedScene" uid="uid://uakad7wo4k3v" path="res://scenes/spawn_fire_rock.tscn" id="9_tot18"]
 
 [sub_resource type="Animation" id="Animation_61lqn"]
 length = 0.001
@@ -130,7 +130,6 @@ _data = {
 script = ExtResource("1_2eb1u")
 
 [node name="background" parent="." instance=ExtResource("1_vlnvp")]
-position = Vector2(696, -133)
 
 [node name="finish" type="AnimationPlayer" parent="."]
 libraries = {
@@ -148,9 +147,6 @@ rotation = -3.10737
 scale = Vector2(9.4, 6.92)
 shape = SubResource("RectangleShape2D_vrpix")
 action = "space"
-
-[node name="Spawner" parent="." instance=ExtResource("6_yjnw3")]
-position = Vector2(14, 2)
 
 [node name="obs" type="Node2D" parent="."]
 
@@ -180,5 +176,7 @@ position = Vector2(-148, -7)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_tmlse")
 volume_db = -31.234
+
+[node name="spawn_fire_rock" parent="." instance=ExtResource("9_tot18")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

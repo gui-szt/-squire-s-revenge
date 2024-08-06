@@ -1,13 +1,25 @@
 extends Control
 
+var progress= GlobalVars.progress
 var diary=0
 var page=1
+var score= GlobalVars.score
 
 func _ready():
 	$AnimationPlayer.play("fade_in")
-	await get_tree().create_timer(0.6).timeout
 	$AudioStreamPlayer.play()
-
+	if progress>9:
+		$Label.visible=true
+		$Label.text="Highscore:"+str(GlobalVars.score)
+	if progress >=1 and progress <4:
+		$AnimatedSprite2D.play("default")
+	if progress>3 and progress <7:
+		$AnimatedSprite2D.play("1")
+	if progress>6 and progress <10:
+		$AnimatedSprite2D.play("2")
+	if progress>9:
+		$AnimatedSprite2D.play("3")
+	await get_tree().create_timer(0.6).timeout
 func _process(delta):
 	if diary==0:
 		$diary.visible=false
@@ -22,7 +34,7 @@ func _process(delta):
 		$diary/name.text="THE MAGE"
 		$diary/AnimatedSprite2D.play("mage")
 		$diary/description.visible=false
-		if GlobalVars.progress >3:
+		if progress >3:
 			$diary/description.visible=true
 			$diary/description.text= "She was always greedy\nbut it's unexpected\ntransform your body\nin pure magic\nit's a shame\nshe was so young\nshe was so beautiful\nshe was so so clever\n...\n\nbut I don't regret \nletting her die\n"
 
@@ -30,14 +42,14 @@ func _process(delta):
 		$diary/name.text="THE PRIEST"
 		$diary/AnimatedSprite2D.play("priest")
 		$diary/description.visible=false
-		if GlobalVars.progress >6:
+		if progress >6:
 			$diary/description.visible=true
 			$diary/description.text= "I was not that religious\nbut he talked so much\nabout this new religion\nfull of followers\nI listened his words\nand now every sunday\ni go to church\nI thankfull for that\n...\n\nbut I don't regret \nletting him die\n"
 	if page==4:
 		$diary/name.text="THE KNIGHT"
 		$diary/AnimatedSprite2D.play("soldier")
 		$diary/description.visible=false
-		if GlobalVars.progress >9:
+		if progress >9:
 			$diary/description.visible=true
 			$diary/description.text= "He want me in his team\nand I,poor commoner\nwith only a horse,\njust want to survive\na hope,for a better life\naccept everything\n even change my horse\n for a uselles shield,\nuntil that day \nTHEY ABANDONED ME,\nAFTER ALL THIS TIME\nWE LIVE TOGETHER\nJUST BECAUSE HE WANT\nI DON'T REGRET\nKILLING HIM"
 		
@@ -47,7 +59,10 @@ func _on_button_pressed():
 	$AudioStreamPlayer3.play()
 	$AnimationPlayer.play("FADE_OUT")
 	await get_tree().create_timer(0.8).timeout
-	get_tree().change_scene_to_file("res://scenes/map.tscn")
+	if progress >9:
+		get_tree().change_scene_to_file("res://scenes/endless.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/map.tscn")
 
 
 func _on_button_2_pressed():

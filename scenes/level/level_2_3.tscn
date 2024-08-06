@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://btquqqmpfjb0u" path="res://scenes/background.tscn" id="2_6lkta"]
 [ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="3_s7rg7"]
 [ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="4_5ioe0"]
-[ext_resource type="PackedScene" uid="uid://dayrq31j0yhat" path="res://scenes/spawner3.tscn" id="5_vw7bv"]
+[ext_resource type="PackedScene" uid="uid://dayrq31j0yhat" path="res://scenes/spawn_cross.tscn" id="5_vw7bv"]
 [ext_resource type="PackedScene" uid="uid://bwgxpd5xhklnu" path="res://scenes/area_2d.tscn" id="6_goqcw"]
 [ext_resource type="Texture2D" uid="uid://d15ufv05t042g" path="res://assets/placeholders/priest.png" id="7_o0cno"]
 [ext_resource type="PackedScene" uid="uid://8s582jo8773o" path="res://scenes/medal.tscn" id="8_78pen"]
@@ -448,7 +448,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(142, 0)]
+"values": [Vector2(250, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_6bk6r"]
@@ -482,7 +482,6 @@ radius = 17.5357
 script = ExtResource("1_13aa3")
 
 [node name="background" parent="." instance=ExtResource("2_6lkta")]
-position = Vector2(664, -131)
 
 [node name="trails" parent="." instance=ExtResource("3_s7rg7")]
 position = Vector2(722, -45)
@@ -490,12 +489,12 @@ position = Vector2(722, -45)
 [node name="trails2" parent="." instance=ExtResource("3_s7rg7")]
 position = Vector2(722, 45)
 
+[node name="obs" type="Node2D" parent="."]
+
 [node name="Spawner" parent="." instance=ExtResource("5_vw7bv")]
 
 [node name="Area2D" parent="." instance=ExtResource("6_goqcw")]
 position = Vector2(-196, -5)
-
-[node name="obs" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-28, -1)
@@ -509,8 +508,8 @@ metadata/_edit_group_ = true
 position = Vector2(-174, 12)
 scale = Vector2(1.0625, 1.02441)
 sprite_frames = SubResource("SpriteFrames_ac3dy")
-animation = &"rocks"
 autoplay = "default"
+frame_progress = 0.290449
 
 [node name="Mage_anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -533,7 +532,7 @@ libraries = {
 }
 
 [node name="medal" parent="." instance=ExtResource("8_78pen")]
-position = Vector2(142, 0)
+position = Vector2(250, 0)
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="medal"]
