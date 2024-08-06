@@ -179,7 +179,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 show_behind_parent = true
-position = Vector2(303, 171)
+position = Vector2(300.767, 172.146)
+scale = Vector2(1.24622, 1.44319)
 texture = ExtResource("2_4frwu")
 
 [node name="Button" type="Button" parent="."]

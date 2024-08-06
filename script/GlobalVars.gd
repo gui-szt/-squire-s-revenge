@@ -1,4 +1,5 @@
 extends Node
+<<<<<<< HEAD
 var level =4
 var progress =4
 var score =0
@@ -9,6 +10,29 @@ func _ready():
 	
 func _process(delta):
 	progress=level
+=======
+var level =1
+var progress =1
+
+const SAVEFILE= "user://savefile.save"
+
+func _ready():
+	var file = FileAccess.open(SAVEFILE, FileAccess.READ)
+	if file != null:
+		level=file.get_var(true)
+		progress=level
+		if level>9:
+			level =1
+			save_progress()
+	else:
+		level=1
+		save_progress()
+	
+func save_progress():
+	var file = FileAccess.open(SAVEFILE, FileAccess.WRITE)
+	file.store_var(level)
+
+>>>>>>> main
 
 func save_game():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)

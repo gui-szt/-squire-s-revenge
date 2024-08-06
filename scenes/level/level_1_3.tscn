@@ -479,15 +479,22 @@ script = ExtResource("1_x1nwf")
 
 [node name="obs" type="Node2D" parent="."]
 
+<<<<<<< HEAD
 [node name="trails2" parent="." instance=ExtResource("2_q5b5j")]
 position = Vector2(720, 28)
+=======
+[node name="trails" parent="." instance=ExtResource("2_q5b5j")]
+position = Vector2(722, -45)
+
+[node name="Spawner" parent="." instance=ExtResource("4_hy7cq")]
+>>>>>>> main
 
 [node name="Area2D" parent="." instance=ExtResource("5_82t76")]
 position = Vector2(-196, -5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-28, -1)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(4, 4.2)
 
 [node name="mage" type="Node2D" parent="."]
 position = Vector2(-15, -1)
@@ -548,7 +555,7 @@ volume_db = -30.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_7vt1n")
-volume_db = -30.0
+volume_db = -10.0
 
 [node name="spawn_fire_rock" parent="." instance=ExtResource("11_76iex")]
 

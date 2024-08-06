@@ -375,6 +375,9 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_02gvd")
 
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(3.6, 3.5)
+
 [node name="squire" type="Node2D" parent="."]
 position = Vector2(-222, -38)
 scale = Vector2(0.65625, 0.65625)
@@ -391,9 +394,6 @@ frame_progress = 0.00387717
 libraries = {
 "": SubResource("AnimationLibrary_dy7f7")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.4, 2.16)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2(-5.99997, -5)

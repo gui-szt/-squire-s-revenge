@@ -49,6 +49,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [-30.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("mountain:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_c8ivg"]
 resource_name = "fade_in"
@@ -116,6 +128,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [-70.0, -30.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("mountain:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e3u3s"]
 _data = {
@@ -131,7 +155,7 @@ script = ExtResource("1_xli3s")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.505455, 0.4)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(4, 4.2)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
 scale = Vector2(23.24, 18.44)
@@ -150,6 +174,7 @@ position = Vector2(722, 45)
 position = Vector2(-148, -7)
 
 [node name="mountain" parent="." instance=ExtResource("6_qaltd")]
+visible = false
 position = Vector2(563, -9)
 
 [node name="shielder" parent="." instance=ExtResource("3_fy138")]

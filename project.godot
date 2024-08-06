@@ -23,7 +23,10 @@ GlobalVars="*res://script/GlobalVars.gd"
 
 window/size/mode=2
 window/size/borderless=true
+<<<<<<< HEAD
 window/stretch/mode="viewport"
+=======
+>>>>>>> main
 
 [input]
 

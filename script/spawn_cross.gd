@@ -19,11 +19,37 @@ func randomi():
 			obs_anim.flip_v= false
 		2:
 			obs_anim.flip_v= false
+<<<<<<< HEAD:script/spawn_cross.gd
+=======
+			if obs== 4 or obs==5 or obs==6:
+				obs_anim.flip_h= false
+			else:
+				if GlobalVars.level==3:
+					posit=-55
+				else:
+					posit = 35
+>>>>>>> main:script/Spawner.gd
 		3:
 			obs_anim.flip_v= true
 		4:
 			obs_anim.flip_v= true
+<<<<<<< HEAD:script/spawn_cross.gd
 
+=======
+			if obs== 4 or obs==5 or obs==6:
+				obs_anim.flip_h=true
+			if obs==1:
+				if GlobalVars.level==3:
+					posit= -24
+				else:
+					posit= 66
+			if obs==2:
+				if GlobalVars.level==3:
+					posit= -7
+				else:
+					posit=83
+			
+>>>>>>> main:script/Spawner.gd
 	var rocks= randi_range(1, 4)
 	match rocks:
 		1:
