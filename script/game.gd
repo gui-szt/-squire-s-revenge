@@ -6,11 +6,13 @@ var page=1
 var score= GlobalVars.score
 
 func _ready():
+	GlobalVars.load_data()
+	score= GlobalVars.score
 	$AnimationPlayer.play("fade_in")
 	$AudioStreamPlayer.play()
 	if progress>9:
 		$Label.visible=true
-		$Label.text="Highscore:"+str(GlobalVars.score)
+		$Label.text="Highscore:"+str(score)
 	if progress >=1 and progress <4:
 		$AnimatedSprite2D.play("default")
 	if progress>3 and progress <7:

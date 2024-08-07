@@ -7,7 +7,6 @@ var obs
 var moment
 var x
 var time=0
-@onready var timer_rock = $Timer_rock
 var OBS = preload("res://scenes/croos_fall.tscn")
 const CROSS_F=preload("res://scenes/croos_fall.tscn")
 const CROSS_R=preload("res://scenes/cross_rotation.tscn")
@@ -38,16 +37,17 @@ func randomi():
 func _ready():
 	match level:
 		4:
+			print("x")
 			obs=4
 			OBS = CROSS_F
-			timer_rock.start()
-			timer_rock.timeout.connect(spawn.bind(OBS, timer_rock ))
+			$Timer_rock.start()
+			$Timer_rock.timeout.connect(spawn.bind(OBS ))
 			
 		5:
 			obs=5
 			OBS = CROSS_R
-			timer_rock.start()
-			timer_rock.timeout.connect(spawn.bind(OBS, timer_rock ))
+			$Timer_rock.start()
+			$Timer_rock.timeout.connect(spawn.bind(OBS ))
 			
 		6:
 			obs=6
@@ -56,33 +56,33 @@ func _ready():
 				1:
 					OBS =CROSS_F
 					obs=4
-					timer_rock.start()
-					timer_rock.timeout.connect(spawn.bind(OBS, timer_rock ))
+					$Timer_rock.start()
+					$Timer_rock.timeout.connect(spawn.bind(OBS ))
 				2:
 					obs=5
 					OBS=CROSS_R
-					timer_rock.start()
-					timer_rock.timeout.connect(spawn.bind(OBS, timer_rock ))
+					$Timer_rock.start()
+					$Timer_rock.timeout.connect(spawn.bind(OBS ))
 
 func _process(delta):
 	if obs==6 or progress>9:
 		await get_tree().create_timer(time).timeout
 		match moment:
 			1:
-				timer_rock.timeout.disconnect(spawn.bind(OBS, timer_rock ))
+				$Timer_rock.timeout.disconnect(spawn.bind(OBS ))
 				OBS =CROSS_F
 				obs=4
-				timer_rock.timeout.connect(spawn.bind(OBS, timer_rock ))
+				$Timer_rock.timeout.connect(spawn.bind(OBS))
 			2:
-				timer_rock.timeout.disconnect(spawn.bind(OBS, timer_rock ))
+				$Timer_rock.timeout.disconnect(spawn.bind(OBS))
 				OBS=CROSS_R
 				obs=5
-				timer_rock.timeout.connect(spawn.bind(OBS, timer_rock ))
+				$Timer_rock.timeout.connect(spawn.bind(OBS))
 				
 	if obs==6 and moment ==1:
 		time=4
 
-func spawn(scene: PackedScene,timer: Timer, parent: Node =get_parent().get_node("obs")) -> Node:
+func spawn(scene: PackedScene, parent: Node =get_parent().get_node("obs")) -> Node:
 	var time_offset: float = 0.2
 	var instance = scene.instantiate()
 	parent.add_child(instance)
@@ -90,7 +90,7 @@ func spawn(scene: PackedScene,timer: Timer, parent: Node =get_parent().get_node(
 	obs_anim=instance.get_node("AnimatedSprite")
 	randomi()
 	if obs==4 :
-		time_offset=0.4
+		time_offset=0.3
 		match x:
 			1:
 				instance.cross=0
@@ -124,12 +124,15 @@ func spawn(scene: PackedScene,timer: Timer, parent: Node =get_parent().get_node(
 	moment= randi_range(1, 2)
 	instance.global_position.y = posit
 	var spawn_rate = time_offset / (1.0+ (GlobalVars.level * 0.1))
-	timer_rock.wait_time =(spawn_rate + randf_range(0.2, 0.5))
+	$Timer_rock.wait_time =(spawn_rate + randf_range(0.2, 0.5))
 	if obs==5:
-		timer_rock.wait_time=3.0
+		$Timer_rock.wait_time=3.0
 	if level==4 or level==5 or level==6:
-		obs=GlobalVars.level
+		obs=level
 	if progress>=9:
 		obs=6
-	timer_rock.start()
+	$Timer_rock.start()
 	return instance
+
+
+

@@ -1,11 +1,13 @@
 extends Node2D
 
-var level=GlobalVars.level
+var level
 var m =0
 @onready var SWORD=preload("res://scenes/sword.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
+	level=GlobalVars.level
 	$finish.play("fade_in")
 	$Timer.start()
 	$AudioStreamPlayer.play()

@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="3_pfxb0"]
 [ext_resource type="FontFile" uid="uid://fenv4xgdmyyy" path="res://assets/fonts/PixelOperator8.ttf" id="4_vxo44"]
 [ext_resource type="PackedScene" uid="uid://c88iso5co5wxq" path="res://scenes/game_over.tscn" id="6_u23rh"]
-[ext_resource type="AudioStream" uid="uid://boi22t0nl04pw" path="res://assets/Music/1_3.wav" id="10_8kcst"]
 [ext_resource type="Texture2D" uid="uid://du8my0nble0rs" path="res://assets/placeholders/mage.png" id="10_ebrgu"]
+[ext_resource type="AudioStream" uid="uid://b6h6rw77fnrxq" path="res://assets/Music/endless.mp3" id="10_egdde"]
 [ext_resource type="Texture2D" uid="uid://d15ufv05t042g" path="res://assets/placeholders/priest.png" id="11_gfar1"]
 [ext_resource type="Texture2D" uid="uid://dsianf7boq6k5" path="res://assets/placeholders/soldier.png" id="12_ik0vt"]
 
@@ -550,7 +550,7 @@ scale = Vector2(0.69, 0.66)
 wait_time = 0.3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_8kcst")
+stream = ExtResource("10_egdde")
 volume_db = -20.0
 
 [connection signal="death" from="shielder" to="." method="_on_shielder_death"]

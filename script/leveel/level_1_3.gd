@@ -10,6 +10,7 @@ var level= GlobalVars.level
 var time =1
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	level= GlobalVars.level
 	$AudioStreamPlayer.play()
 	$Timer.start()
 	$fade.play("fade_in")

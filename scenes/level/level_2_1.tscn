@@ -147,14 +147,13 @@ position = Vector2(722, 45)
 
 [node name="obs" type="Node2D" parent="."]
 
+[node name="spawn_cross" parent="." instance=ExtResource("7_vyreq")]
+
 [node name="Area2D" parent="." instance=ExtResource("4_2y27u")]
 position = Vector2(-148, -7)
 
 [node name="mountain" parent="." instance=ExtResource("5_oxyvu")]
 position = Vector2(563, -9)
-
-[node name="Spawner" parent="." instance=ExtResource("7_vyreq")]
-position = Vector2(235, -94)
 
 [node name="shielder" parent="." instance=ExtResource("2_aikrh")]
 
