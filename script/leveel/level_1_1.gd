@@ -6,7 +6,7 @@ var m =0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	GlobalVars.load_data()
 	level=GlobalVars.level
 	$finish.play("fade_in")
 	$Timer.start()
@@ -24,8 +24,8 @@ func _process(delta):
 func _on_timer_timeout():
 	$finish.play("finish")
 	GlobalVars.level +=1
-	GlobalVars.save_game()
-	await get_tree().create_timer(1.3).timeout
+	GlobalVars.save_game
+	await get_tree().create_timer(1.1).timeout
 	get_tree().change_scene_to_file("res://scenes/map.tscn")
 	
 func call_swords():

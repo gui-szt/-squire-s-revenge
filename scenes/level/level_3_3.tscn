@@ -280,7 +280,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ni7ad"]
-radius = 17.0294
+radius = 25.2551
 
 [sub_resource type="Animation" id="Animation_icupg"]
 length = 0.001
@@ -352,7 +352,7 @@ scale = Vector2(0.505455, 0.4)
 zoom = Vector2(3.5, 3.5)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
-scale = Vector2(23.24, 18.44)
+scale = Vector2(47.2184, 31.54)
 shape = SubResource("RectangleShape2D_0pucx")
 action = "space"
 
@@ -392,7 +392,6 @@ frame_progress = 0.627385
 [node name="medal" parent="." instance=ExtResource("7_bylp6")]
 position = Vector2(300, -2)
 scale = Vector2(0.68, 0.54)
-metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="medal"]
 

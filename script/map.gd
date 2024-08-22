@@ -1,15 +1,13 @@
 extends Node2D
 
 var stop=0
-var level
+var level=GlobalVars.level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalVars.load_data()
-	level=GlobalVars.level
 	$AnimationPlayer.play("fade_in")
 	$AudioStreamPlayer.play()
-	await get_tree().create_timer(1).timeout
 	stop=1
 	
 

@@ -33,7 +33,7 @@ func _process(delta):
 		$diary/description.visible=true
 		$diary/description.text= "We used to be a team\nA strong soldier\nA powerfull mage\nA devout priest\nAnd I, a little squire,\nwho everyone treats\nlike a jester\ni'll take all their power\nanyone will never \nlaugh at me again\nthey will be the joke,\nif them survive"
 	if page==2:
-		$diary/name.text="THE MAGE"
+		$diary/name.text="THE WITCH"
 		$diary/AnimatedSprite2D.play("mage")
 		$diary/description.visible=false
 		if progress >3:
@@ -69,6 +69,8 @@ func _on_button_pressed():
 
 func _on_button_2_pressed():
 	$AudioStreamPlayer3.play()
+	GlobalVars.save_game
+	await  get_tree().create_timer(0.3).timeout
 	get_tree().quit()
 
 
