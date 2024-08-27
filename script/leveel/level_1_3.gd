@@ -78,12 +78,15 @@ func _on_area_2d_body_entered(body):
 	await get_tree().create_timer(0.6).timeout
 	if level>=9:
 		GlobalVars.level +=1
-		GlobalVars.save_game
+		GlobalVars.progress +=1
+		GlobalVars.save_game()
 		Engine.time_scale=1
 		get_tree().change_scene_to_file("res://scenes/end.tscn")
 	else :
 		GlobalVars.level +=1
-	GlobalVars.save_game
+		GlobalVars.progress +=1
+		GlobalVars.save_game()
+	GlobalVars.save_game()
 	Engine.time_scale=1
 	get_tree().change_scene_to_file("res://scenes/map.tscn")
 
@@ -105,3 +108,8 @@ func _on_spawn_fire_rock_change_2():
 	if z==0:
 		moment=1
 
+
+func _on_shielder_death():
+	$Timer.stop()
+	await get_tree().create_timer(1.0).timeout
+	get_node("shielder").queue_free()

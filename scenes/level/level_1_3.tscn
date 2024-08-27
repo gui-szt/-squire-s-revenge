@@ -555,6 +555,7 @@ volume_db = -25.0
 [node name="spawn_fire_rock" parent="." instance=ExtResource("11_76iex")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="death" from="shielder" to="." method="_on_shielder_death"]
 [connection signal="body_entered" from="medal/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="change_1" from="spawn_fire_rock" to="." method="_on_spawn_fire_rock_change_1"]
 [connection signal="change_2" from="spawn_fire_rock" to="." method="_on_spawn_fire_rock_change_2"]

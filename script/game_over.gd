@@ -19,4 +19,3 @@ func _on_button_pressed():
 func _on_button_2_pressed():
 	$AudioStreamPlayer.play()
 	get_parent().get_tree().reload_current_scene()
-

@@ -64,7 +64,10 @@ func _on_button_pressed():
 	if progress >9:
 		get_tree().change_scene_to_file("res://scenes/endless.tscn")
 	else:
-		get_tree().change_scene_to_file("res://scenes/map.tscn")
+		if progress==0:
+			get_tree().change_scene_to_file("res://scenes/level/tutorial.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/map.tscn")
 
 
 func _on_button_2_pressed():

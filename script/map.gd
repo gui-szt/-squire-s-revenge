@@ -82,6 +82,3 @@ func _process(delta):
 			await get_tree().create_timer(1).timeout
 			get_tree().change_scene_to_file("res://scenes/level/level_3_3.tscn")
 		
-
-
-

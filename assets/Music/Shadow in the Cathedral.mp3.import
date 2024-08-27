@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0huv3d1ivjjw"
+path="res://.godot/imported/Shadow in the Cathedral.mp3-76c12d159071d3e8912c53636a8a18b1.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/Shadow in the Cathedral.mp3"
+dest_files=["res://.godot/imported/Shadow in the Cathedral.mp3-76c12d159071d3e8912c53636a8a18b1.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

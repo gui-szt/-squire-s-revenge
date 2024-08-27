@@ -179,4 +179,5 @@ volume_db = -31.234
 
 [node name="spawn_fire_rock" parent="." instance=ExtResource("9_tot18")]
 
+[connection signal="death" from="shielder" to="." method="_on_shielder_death"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

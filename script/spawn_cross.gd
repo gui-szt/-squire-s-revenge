@@ -133,6 +133,3 @@ func spawn(scene: PackedScene, parent: Node =get_parent().get_node("obs")) -> No
 		obs=6
 	$Timer_rock.start()
 	return instance
-
-
-

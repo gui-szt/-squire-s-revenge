@@ -1,9 +1,0 @@
-res://scenes/game_over.tscn
-res://scenes/game.tscn
-res://script/game.gd
-res://script/GlobalVars.gd
-res://script/leveel/level_1_1.gd
-res://script/leveel/level_1_3.gd
-res://script/map.gd
-res://default_bus_layout.tres
-res://scenes/map.tscn
