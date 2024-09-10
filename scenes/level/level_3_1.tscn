@@ -134,7 +134,7 @@ scale = Vector2(0.505455, 0.4)
 zoom = Vector2(3.5, 3.5)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
-scale = Vector2(23.24, 18.44)
+scale = Vector2(38.8299, 33.64)
 shape = SubResource("RectangleShape2D_0pucx")
 action = "space"
 

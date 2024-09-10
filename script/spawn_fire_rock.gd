@@ -59,7 +59,7 @@ func _process(delta):
 func spawn(scene: PackedScene):
 	var time_offset: float = 0.2
 	if level==3:
-		time_offset= 0.7
+		time_offset= 0.5
 	var instance = scene.instantiate()
 	get_parent().get_node("obs").add_child(instance)
 	instance.visible= true

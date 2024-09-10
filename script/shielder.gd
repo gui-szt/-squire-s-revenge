@@ -16,6 +16,7 @@ func _ready():
 		position.y = -55
 	position.x=-80
 	$AudioStreamPlayer.stream = run
+	$AudioStreamPlayer.volume_db=-65
 	$AudioStreamPlayer.play()
 	
 func upsidedown():

@@ -16,7 +16,5 @@ func _on_collision_body_entered(body):
 		body.get_node("AnimatedSprite2D").play("death")
 		body.get_node("CollisionShape2D").queue_free()
 		await get_tree().create_timer(1.0).timeout
-		body.queue_free()
 		get_parent().get_parent().get_node("game_over").get_node("AnimationPlayer").play("new_animation")
 		
-

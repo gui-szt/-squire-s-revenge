@@ -172,7 +172,7 @@ position = Vector2(-139, 0)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2(-8, -1)
-scale = Vector2(9.4, 6.92)
+scale = Vector2(18.32, 11.32)
 shape = SubResource("RectangleShape2D_vrpix")
 action = "space"
 

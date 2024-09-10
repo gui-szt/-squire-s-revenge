@@ -4,12 +4,14 @@ const CROSS_R=preload("res://scenes/cross_rotation.tscn")
 var m =0
 var moment
 const SWORD = preload("res://scenes/sword.tscn")
-var z =3
+var z =0
 var y
 var level= GlobalVars.level
 var time =1
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalVars.load_data()
+	level= GlobalVars.level
 	$AudioStreamPlayer.play()
 	$Timer.start()
 	$fade.play("fade_in")
@@ -30,14 +32,17 @@ func mage():
 		await get_tree().create_timer(4).timeout
 		match moment:
 			1:
-				$mage/AnimatedSprite2D.play("fire")
-				y=0
+				if z==0:
+					$mage/AnimatedSprite2D.play("fire")
+					y=0
 			2:
-				$mage/AnimatedSprite2D.play("rocks")
-				y=0
+				if z==0:
+					$mage/AnimatedSprite2D.play("rocks")
+					y=0
 			3:
-				$mage/AnimatedSprite2D.play("default")
-				y=0
+				if z==0:
+					$mage/AnimatedSprite2D.play("default")
+					y=0
 	await get_tree().create_timer(2).timeout
 	y=1
 
@@ -61,21 +66,26 @@ func _on_timer_timeout():
 
 
 func _on_area_2d_body_entered(body):
+	$mage/AnimatedSprite2D.stop()
 	Engine.time_scale=0.5
 	$Mage_anim.play("get_medal")
-	body.get_node("CollisionShape2D").queue_free()
+	z=1
 	$mage/AnimatedSprite2D.play("death")
+	body.get_node("CollisionShape2D").queue_free()
 	$AudioStreamPlayer2.play()
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.7).timeout
 	$fade.play("fade_out")
 	await get_tree().create_timer(0.6).timeout
-	if GlobalVars.level>=9:
+	if level>=9:
 		GlobalVars.level +=1
+		GlobalVars.progress +=1
 		GlobalVars.save_game()
 		Engine.time_scale=1
 		get_tree().change_scene_to_file("res://scenes/end.tscn")
 	else :
 		GlobalVars.level +=1
+		GlobalVars.progress +=1
+		GlobalVars.save_game()
 	GlobalVars.save_game()
 	Engine.time_scale=1
 	get_tree().change_scene_to_file("res://scenes/map.tscn")
@@ -90,9 +100,16 @@ func call_swords():
 
 
 func _on_spawn_fire_rock_change_1():
-	moment=2
+	if z==0:
+		moment=2
 
 
 func _on_spawn_fire_rock_change_2():
-	moment=1
+	if z==0:
+		moment=1
 
+
+func _on_shielder_death():
+	$Timer.stop()
+	await get_tree().create_timer(1.0).timeout
+	get_node("shielder").queue_free()

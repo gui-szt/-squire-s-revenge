@@ -217,8 +217,8 @@ offset_right = 130.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("2_d3mh8")
 theme_override_font_sizes/font_size = 16
-text = "TENTAR
-NOVAMENTE"
+text = "TRY
+AGAIN"
 horizontal_alignment = 1
 
 [node name="GAME OVER" type="Label" parent="."]

@@ -176,13 +176,13 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ql7md")
-volume_db = -43.0
+volume_db = -50.0
 autoplay = true
 bus = &"sfx"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5is7h")
-volume_db = -30.0
+volume_db = -40.0
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

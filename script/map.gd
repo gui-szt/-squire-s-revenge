@@ -5,9 +5,9 @@ var level=GlobalVars.level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalVars.load_data()
 	$AnimationPlayer.play("fade_in")
 	$AudioStreamPlayer.play()
-	await get_tree().create_timer(1).timeout
 	stop=1
 	
 
@@ -82,6 +82,3 @@ func _process(delta):
 			await get_tree().create_timer(1).timeout
 			get_tree().change_scene_to_file("res://scenes/level/level_3_3.tscn")
 		
-
-
-

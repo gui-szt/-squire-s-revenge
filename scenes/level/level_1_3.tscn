@@ -12,33 +12,33 @@
 [ext_resource type="AudioStream" uid="uid://csrhoramblxtb" path="res://assets/Music/sfx/boss_death.wav" id="11_7vt1n"]
 [ext_resource type="PackedScene" uid="uid://uakad7wo4k3v" path="res://scenes/spawn_fire_rock.tscn" id="11_76iex"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qqwwu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_10oow"]
 atlas = ExtResource("6_7wb0q")
-region = Rect2(0, 192, 32, 32)
+region = Rect2(0, 192, 30, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qolvt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_30lih"]
 atlas = ExtResource("6_7wb0q")
-region = Rect2(32, 192, 32, 32)
+region = Rect2(32, 192, 30, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sojgb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q8if"]
 atlas = ExtResource("6_7wb0q")
-region = Rect2(64, 192, 32, 32)
+region = Rect2(64, 192, 30, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wpydb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_447nr"]
 atlas = ExtResource("6_7wb0q")
-region = Rect2(96, 192, 32, 32)
+region = Rect2(96, 192, 30, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hfvo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_re5m7"]
 atlas = ExtResource("6_7wb0q")
-region = Rect2(128, 192, 32, 32)
+region = Rect2(128, 192, 30, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bsnwj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hyjn"]
 atlas = ExtResource("6_7wb0q")
-region = Rect2(160, 192, 32, 32)
+region = Rect2(160, 192, 30, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sf5hd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gilx3"]
 atlas = ExtResource("6_7wb0q")
-region = Rect2(192, 128, 64, 64)
+region = Rect2(192, 192, 30, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b435l"]
 atlas = ExtResource("6_7wb0q")
@@ -112,29 +112,29 @@ region = Rect2(160, 63, 32, 34)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qqwwu")
+"texture": SubResource("AtlasTexture_10oow")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qolvt")
+"texture": SubResource("AtlasTexture_30lih")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sojgb")
+"texture": SubResource("AtlasTexture_1q8if")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wpydb")
+"texture": SubResource("AtlasTexture_447nr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2hfvo")
+"texture": SubResource("AtlasTexture_re5m7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bsnwj")
+"texture": SubResource("AtlasTexture_0hyjn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sf5hd")
+"texture": SubResource("AtlasTexture_gilx3")
 }],
 "loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -307,7 +307,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-5, -1), Vector2(-1, 2), Vector2(-5, 1), Vector2(-9, -5)]
+"values": [Vector2(-5, -1), Vector2(7, 0), Vector2(-2, 1), Vector2(-5, -5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -468,7 +468,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t38jw"]
-radius = 17.5357
+radius = 25.02
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umrgs"]
 
@@ -499,6 +499,8 @@ scale = Vector2(1.0625, 1.02441)
 sprite_frames = SubResource("SpriteFrames_ac3dy")
 animation = &"death"
 autoplay = "default"
+frame = 6
+frame_progress = 1.0
 
 [node name="Mage_anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -538,7 +540,7 @@ scale = Vector2(0.696, 0.665)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2(-27, 1)
-scale = Vector2(-10.4453, -9.59673)
+scale = Vector2(-19.3253, -13.4367)
 shape = SubResource("RectangleShape2D_umrgs")
 action = "space"
 
@@ -548,11 +550,12 @@ volume_db = -30.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_7vt1n")
-volume_db = -30.0
+volume_db = -25.0
 
 [node name="spawn_fire_rock" parent="." instance=ExtResource("11_76iex")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="death" from="shielder" to="." method="_on_shielder_death"]
 [connection signal="body_entered" from="medal/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="change_1" from="spawn_fire_rock" to="." method="_on_spawn_fire_rock_change_1"]
 [connection signal="change_2" from="spawn_fire_rock" to="." method="_on_spawn_fire_rock_change_2"]

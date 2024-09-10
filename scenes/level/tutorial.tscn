@@ -1,0 +1,153 @@
+[gd_scene load_steps=12 format=3 uid="uid://cky5l720uml1x"]
+
+[ext_resource type="Script" path="res://script/leveel/tutorial.gd" id="1_itc65"]
+[ext_resource type="PackedScene" uid="uid://btquqqmpfjb0u" path="res://scenes/background.tscn" id="1_tv34u"]
+[ext_resource type="PackedScene" uid="uid://2r6wohghpdsi" path="res://scenes/trails.tscn" id="2_qftav"]
+[ext_resource type="PackedScene" uid="uid://buvgst1h3p5fi" path="res://scenes/shielder.tscn" id="3_uo4q7"]
+[ext_resource type="AudioStream" uid="uid://d0huv3d1ivjjw" path="res://assets/Music/Shadow in the Cathedral.mp3" id="4_2gryf"]
+[ext_resource type="FontFile" uid="uid://fenv4xgdmyyy" path="res://assets/fonts/PixelOperator8.ttf" id="5_p3qqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rvtm"]
+
+[sub_resource type="Animation" id="Animation_5h4j3"]
+resource_name = "_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0701524, 0.0701524, 0.0701524, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_prpud"]
+resource_name = "_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.0295066, 0.0295066, 0.0295066, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f06ya"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0701524, 0.0701524, 0.0701524, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_42etn"]
+_data = {
+"RESET": SubResource("Animation_f06ya"),
+"_in": SubResource("Animation_5h4j3"),
+"_out": SubResource("Animation_prpud")
+}
+
+[node name="tutorial" type="Node2D"]
+modulate = Color(0.0701524, 0.0701524, 0.0701524, 1)
+script = ExtResource("1_itc65")
+
+[node name="background" parent="." instance=ExtResource("1_tv34u")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -263.0
+offset_top = -87.0
+offset_right = 257.0
+offset_bottom = -38.0
+theme_override_fonts/font = ExtResource("5_p3qqu")
+theme_override_font_sizes/font_size = 8
+text = "in this adventure you shall
+ get you vengeance,running on your shield"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = -170.0
+offset_top = -31.0
+offset_right = 36.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("5_p3qqu")
+theme_override_font_sizes/font_size = 8
+text = "click \"space\" or on the screen
+to jump to the other trail
+"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+offset_left = -220.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("5_p3qqu")
+theme_override_font_sizes/font_size = 8
+text = "or if you press ,
+you gonna be upside down
+on the trail that you are in the moment"
+horizontal_alignment = 1
+
+[node name="trails" parent="." instance=ExtResource("2_qftav")]
+position = Vector2(0, -45)
+
+[node name="trails2" parent="." instance=ExtResource("2_qftav")]
+position = Vector2(0, 45)
+
+[node name="shielder" parent="." instance=ExtResource("3_uo4q7")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2gryf")
+volume_db = -20.0
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
+scale = Vector2(27.76, 16.88)
+shape = SubResource("RectangleShape2D_1rvtm")
+action = "space"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = -94.0
+offset_top = 67.0
+offset_right = 94.0
+offset_bottom = 82.0
+button_mask = 7
+metadata/_edit_group_ = true
+
+[node name="Label4" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = -166.0
+offset_top = 3.0
+offset_right = 354.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("5_p3qqu")
+theme_override_font_sizes/font_size = 8
+text = "click here when you are ready"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_42etn")
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
