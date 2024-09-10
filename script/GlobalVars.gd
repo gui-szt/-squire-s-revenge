@@ -1,7 +1,7 @@
 extends Node
-var level=0
-var progress=0
-var score =0
+var level
+var progress
+var score 
 ##const SAVE_PATH : String = "user://savegame.bin"
 const SAVEFILE: String = "user://savegame.save"
 
@@ -17,6 +17,9 @@ func save_game():
 func load_data():
 	var File = FileAccess.open(SAVEFILE,FileAccess.READ)
 	if not File.file_exists(SAVEFILE):
+		score=0
+		level=0
+		progress=0
 		save_game()
 	while (File.get_position()< File.get_length()):
 		var file_s=File.get_line()
@@ -28,7 +31,7 @@ func load_data():
 				level = data[i]
 			if i== "score":
 				score= data[i]
-			if i ==" progress":
+			if i =="progress":
 				progress = data[i]
 func save_score():
 	save_game()

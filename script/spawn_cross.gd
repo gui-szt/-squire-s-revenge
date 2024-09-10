@@ -35,34 +35,35 @@ func randomi():
 			obs_anim.play("rock4")
 
 func _ready():
-	match level:
-		4:
-			print("x")
-			obs=4
-			OBS = CROSS_F
-			$Timer_rock.start()
-			$Timer_rock.timeout.connect(spawn.bind(OBS ))
+	GlobalVars.load_data()
+	progress =GlobalVars.progress
+	level = GlobalVars.level
+
+	if level==4:
+		obs=4
+		OBS = CROSS_F
+		$Timer_rock.start()
+		$Timer_rock.timeout.connect(spawn.bind(OBS ))
+	if level==5:
+		obs=5
+		OBS = CROSS_R
+		$Timer_rock.start()
+		$Timer_rock.timeout.connect(spawn.bind(OBS ))
 			
-		5:
-			obs=5
-			OBS = CROSS_R
-			$Timer_rock.start()
-			$Timer_rock.timeout.connect(spawn.bind(OBS ))
-			
-		6:
-			obs=6
-			moment= randi_range(1, 2)
-			match moment:
-				1:
-					OBS =CROSS_F
-					obs=4
-					$Timer_rock.start()
-					$Timer_rock.timeout.connect(spawn.bind(OBS ))
-				2:
-					obs=5
-					OBS=CROSS_R
-					$Timer_rock.start()
-					$Timer_rock.timeout.connect(spawn.bind(OBS ))
+	if level==6:
+		obs=6
+		moment= randi_range(1, 2)
+		match moment:
+			1:
+				OBS =CROSS_F
+				obs=4
+				$Timer_rock.start()
+				$Timer_rock.timeout.connect(spawn.bind(OBS ))
+			2:
+				obs=5
+				OBS=CROSS_R
+				$Timer_rock.start()
+				$Timer_rock.timeout.connect(spawn.bind(OBS ))
 
 func _process(delta):
 	if obs==6 or progress>9:

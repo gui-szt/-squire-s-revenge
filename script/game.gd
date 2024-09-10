@@ -7,6 +7,7 @@ var score= GlobalVars.score
 
 func _ready():
 	GlobalVars.load_data()
+	progress= GlobalVars.level
 	score= GlobalVars.score
 	$AnimationPlayer.play("fade_in")
 	$AudioStreamPlayer.play()
